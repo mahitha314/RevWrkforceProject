@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <!-- Console Appender -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+        <!-- File Appender with Rolling Policy -->
+        <RollingFile name="FileAppender"
+                     fileName="logs/application.log"
+                     filePattern="logs/application-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout>
+                <pattern>%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <!-- Roll file every day -->
+                <TimeBasedTriggeringPolicy />
+                <!-- Roll file when size exceeds 5 MB -->
+                <SizeBasedTriggeringPolicy size="5MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <!-- Application logger -->
+        <Logger name="rev.co" level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="FileAppender"/>
+        </Logger>
+
+        <!-- Root logger -->
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="FileAppender"/>
+        </Root>
+    </Loggers>
+</Configuration>
