@@ -126,3 +126,219 @@
 2026-01-30 10:03:55 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
 2026-01-30 10:52:12 [main] INFO  rev.co.Service.AdminService - Admin 1 viewing employees
 2026-01-30 10:52:14 [main] INFO  rev.co.Service.AdminService - Admin 1 viewing audit logs
+2026-01-30 11:32:13 [main] INFO  rev.co.util.RevWorkForceProject.Login - Login successful for userId 1, role ADMIN
+2026-01-30 11:32:13 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 logged into Admin Menu
+2026-01-30 11:32:13 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 11:32:16 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 1
+2026-01-30 11:32:16 [main] INFO  rev.co.Service.AdminService - Admin 1001 started Add Employee
+2026-01-30 11:34:04 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 11:34:22 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 2
+2026-01-30 11:34:22 [main] INFO  rev.co.Service.AdminService - Admin 1001 viewing employees
+2026-01-30 11:34:22 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 11:38:05 [main] INFO  rev.co.util.RevWorkForceProject.Login - Login successful for userId 1, role ADMIN
+2026-01-30 11:38:05 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 logged into Admin Menu
+2026-01-30 11:38:05 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 11:38:08 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 2
+2026-01-30 11:38:08 [main] INFO  rev.co.Service.AdminService - Admin 1001 viewing employees
+2026-01-30 11:38:08 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 11:46:19 [main] INFO  rev.co.util.RevWorkForceProject.Login - Login successful for userId 1, role ADMIN
+2026-01-30 11:46:19 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 logged into Admin Menu
+2026-01-30 11:46:19 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 11:46:22 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 2
+2026-01-30 11:46:22 [main] INFO  rev.co.Service.AdminService - Admin 1001 viewing employees
+2026-01-30 11:46:23 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 11:46:37 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 1
+2026-01-30 11:46:37 [main] INFO  rev.co.Service.AdminService - Admin 1001 started Add Employee
+2026-01-30 11:48:08 [main] INFO  rev.co.Service.AdminService - Admin 1001 added employee 3019
+2026-01-30 11:48:09 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 11:48:26 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 11
+2026-01-30 11:49:04 [main] INFO  rev.co.Service.AdminService - Admin 1001 sending notification to employee 3019
+2026-01-30 11:49:05 [main] ERROR rev.co.Service.AdminService - Error sending notification
+java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (SYSTEM.SYS_C008354) violated
+
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:628) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:562) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1145) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:726) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:291) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:492) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:148) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1038) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OracleStatement.executeSQLStatement(OracleStatement.java:1507) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1287) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3735) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeLargeUpdate(OraclePreparedStatement.java:3910) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3889) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:992) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at rev.co.Service.AdminService.sendNotification(AdminService.java:720) [classes/:?]
+	at rev.co.menu.AdminMenu.show(AdminMenu.java:77) [classes/:?]
+	at rev.co.util.RevWorkForceProject.Login.main(Login.java:72) [classes/:?]
+Caused by: oracle.jdbc.OracleDatabaseException: ORA-00001: unique constraint (SYSTEM.SYS_C008354) violated
+
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:632) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	... 16 more
+2026-01-30 11:49:05 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 11:55:34 [main] INFO  rev.co.util.RevWorkForceProject.Login - Login successful for userId 1, role ADMIN
+2026-01-30 11:55:34 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 logged into Admin Menu
+2026-01-30 11:55:34 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 11:55:37 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 2
+2026-01-30 11:55:37 [main] INFO  rev.co.Service.AdminService - Admin 1001 viewing employees
+2026-01-30 11:55:37 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 11:55:46 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 11
+2026-01-30 11:56:14 [main] INFO  rev.co.Service.AdminService - Admin 1001 sending notification to employee 3019
+2026-01-30 11:56:14 [main] ERROR rev.co.Service.AdminService - Error sending notification
+java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (SYSTEM.SYS_C008354) violated
+
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:628) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:562) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1145) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:726) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:291) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:492) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:148) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1038) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OracleStatement.executeSQLStatement(OracleStatement.java:1507) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1287) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3735) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeLargeUpdate(OraclePreparedStatement.java:3910) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3889) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:992) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at rev.co.Service.AdminService.sendNotification(AdminService.java:718) [classes/:?]
+	at rev.co.menu.AdminMenu.show(AdminMenu.java:77) [classes/:?]
+	at rev.co.util.RevWorkForceProject.Login.main(Login.java:72) [classes/:?]
+Caused by: oracle.jdbc.OracleDatabaseException: ORA-00001: unique constraint (SYSTEM.SYS_C008354) violated
+
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:632) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	... 16 more
+2026-01-30 11:56:14 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 12:03:27 [main] INFO  rev.co.util.RevWorkForceProject.Login - Login successful for userId 1, role ADMIN
+2026-01-30 12:03:27 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 logged into Admin Menu
+2026-01-30 12:03:27 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 12:03:34 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 11
+2026-01-30 12:03:56 [main] INFO  rev.co.Service.AdminService - Admin 1001 sending notification to employee 3019
+2026-01-30 12:03:56 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 12:04:13 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 3
+2026-01-30 12:04:24 [main] INFO  rev.co.Service.AdminService - Admin 1001 updating status of employee 3019
+2026-01-30 12:04:25 [main] INFO  rev.co.Service.AdminService - Employee 3019 status updated to ACTIVE
+2026-01-30 12:04:25 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 12:04:37 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 2
+2026-01-30 12:04:37 [main] INFO  rev.co.Service.AdminService - Admin 1001 viewing employees
+2026-01-30 12:04:37 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 12:04:41 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 4
+2026-01-30 12:05:19 [main] INFO  rev.co.Service.AdminService - Admin 1001 assigning manager 2012 to employee 3019
+2026-01-30 12:05:19 [main] INFO  rev.co.Service.AdminService - Manager Kiran assigned to employee 3019
+2026-01-30 12:05:19 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 12:05:26 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 6
+2026-01-30 12:05:45 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 12:05:55 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 6
+2026-01-30 12:06:06 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 12:06:34 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 7
+2026-01-30 12:06:44 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 12:06:52 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 9
+2026-01-30 12:06:52 [main] INFO  rev.co.Service.AdminService - Admin 1001 viewing performance reviews
+2026-01-30 12:06:52 [main] INFO  rev.co.Service.AdminService - Performance reviews viewed successfully by admin 1001
+2026-01-30 12:06:52 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 12:07:12 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 10
+2026-01-30 12:07:31 [main] INFO  rev.co.Service.AdminService - Admin 1001 publishing announcement 15 holiday updated
+2026-01-30 12:07:31 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 12:07:39 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 12
+2026-01-30 12:07:39 [main] INFO  rev.co.Service.AdminService - Admin 1001 viewing audit logs
+2026-01-30 12:07:40 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 12:08:12 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 0
+2026-01-30 12:08:12 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 logged out
+2026-01-30 12:08:23 [main] WARN  rev.co.util.RevWorkForceProject.Login - Invalid login attempt for employeeId 3019
+2026-01-30 12:09:46 [main] WARN  rev.co.util.RevWorkForceProject.Login - Invalid login attempt for employeeId 3019
+2026-01-30 12:16:19 [main] INFO  rev.co.util.RevWorkForceProject.Login - Login successful for userId 3, role EMPLOYEE
+2026-01-30 12:16:19 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3001 logged in
+2026-01-30 12:16:19 [main] INFO  rev.co.menu.EmployeeMenu - Displaying Employee Menu
+2026-01-30 12:16:23 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3001 selected option 1
+2026-01-30 12:16:23 [main] INFO  rev.co.Service.EmployeeService - Employee 3001 | Casual Leave : 8
+2026-01-30 12:16:23 [main] INFO  rev.co.Service.EmployeeService - Employee 3001 | Sick Leave : 8
+2026-01-30 12:16:23 [main] INFO  rev.co.Service.EmployeeService - Employee 3001 | Paid Leave : 15
+2026-01-30 12:16:23 [main] INFO  rev.co.Service.EmployeeService - Employee 3001 | Privilege Leave : 6
+2026-01-30 12:16:23 [main] INFO  rev.co.menu.EmployeeMenu - Displaying Employee Menu
+2026-01-30 12:16:39 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3001 selected option 3
+2026-01-30 12:16:39 [main] INFO  rev.co.Service.EmployeeService - Leave history viewed for employee 3001
+2026-01-30 12:16:39 [main] INFO  rev.co.menu.EmployeeMenu - Displaying Employee Menu
+2026-01-30 12:16:56 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3001 selected option 4
+2026-01-30 12:17:10 [main] WARN  rev.co.Service.EmployeeService - Employee 3001 failed to cancel leave 7
+2026-01-30 12:17:10 [main] INFO  rev.co.menu.EmployeeMenu - Displaying Employee Menu
+2026-01-30 12:17:22 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3001 selected option 5
+2026-01-30 12:17:22 [main] INFO  rev.co.menu.EmployeeMenu - Displaying Employee Menu
+2026-01-30 12:17:39 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3001 selected option 7
+2026-01-30 12:17:39 [main] INFO  rev.co.menu.EmployeeMenu - Displaying Employee Menu
+2026-01-30 12:17:56 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3001 selected option 8
+2026-01-30 12:17:56 [main] INFO  rev.co.menu.EmployeeMenu - Displaying Employee Menu
+2026-01-30 12:18:33 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3001 selected option 9
+2026-01-30 12:18:33 [main] INFO  rev.co.menu.EmployeeMenu - Displaying Employee Menu
+2026-01-30 12:18:59 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3001 selected option 12
+2026-01-30 12:18:59 [main] INFO  rev.co.menu.EmployeeMenu - Displaying Employee Menu
+2026-01-30 12:20:08 [main] INFO  rev.co.util.RevWorkForceProject.Login - Login successful for userId 3, role EMPLOYEE
+2026-01-30 12:20:08 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3001 logged in
+2026-01-30 12:20:08 [main] INFO  rev.co.menu.EmployeeMenu - Displaying Employee Menu
+2026-01-30 12:20:44 [main] INFO  rev.co.util.RevWorkForceProject.Login - Login successful for userId 1, role ADMIN
+2026-01-30 12:20:45 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 logged into Admin Menu
+2026-01-30 12:20:45 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 12:20:47 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 1
+2026-01-30 12:20:47 [main] INFO  rev.co.Service.AdminService - Admin 1001 started Add Employee
+2026-01-30 12:21:18 [main] ERROR rev.co.util.RevWorkForceProject.Login - Login error for employeeId 1001
+java.util.InputMismatchException: null
+	at java.util.Scanner.throwFor(Scanner.java:947) ~[?:?]
+	at java.util.Scanner.next(Scanner.java:1602) ~[?:?]
+	at java.util.Scanner.nextInt(Scanner.java:2267) ~[?:?]
+	at java.util.Scanner.nextInt(Scanner.java:2221) ~[?:?]
+	at rev.co.Service.AdminService.addEmployee(AdminService.java:39) ~[classes/:?]
+	at rev.co.menu.AdminMenu.show(AdminMenu.java:47) ~[classes/:?]
+	at rev.co.util.RevWorkForceProject.Login.main(Login.java:72) [classes/:?]
+2026-01-30 12:21:41 [main] INFO  rev.co.util.RevWorkForceProject.Login - Login successful for userId 1, role ADMIN
+2026-01-30 12:21:41 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 logged into Admin Menu
+2026-01-30 12:21:41 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 12:21:43 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 1
+2026-01-30 12:21:43 [main] INFO  rev.co.Service.AdminService - Admin 1001 started Add Employee
+2026-01-30 12:22:45 [main] INFO  rev.co.Service.AdminService - Admin 1001 added employee 3020
+2026-01-30 12:22:45 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 12:23:10 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 0
+2026-01-30 12:23:10 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 logged out
+2026-01-30 12:23:30 [main] INFO  rev.co.util.RevWorkForceProject.Login - Login successful for userId 1020, role EMPLOYEE
+2026-01-30 12:23:30 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3020 logged in
+2026-01-30 12:23:30 [main] INFO  rev.co.menu.EmployeeMenu - Displaying Employee Menu
+2026-01-30 12:23:58 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3020 selected option 0
+2026-01-30 12:23:58 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3020 logged out
+2026-01-30 12:24:05 [main] INFO  rev.co.util.RevWorkForceProject.Login - Login successful for userId 1, role ADMIN
+2026-01-30 12:24:06 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 logged into Admin Menu
+2026-01-30 12:24:06 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 12:24:08 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 2
+2026-01-30 12:24:08 [main] INFO  rev.co.Service.AdminService - Admin 1001 viewing employees
+2026-01-30 12:24:08 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 12:24:12 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 0
+2026-01-30 12:24:12 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 logged out
+2026-01-30 12:24:27 [main] WARN  rev.co.util.RevWorkForceProject.Login - Invalid login attempt for employeeId 2012
+2026-01-30 12:25:39 [main] INFO  rev.co.util.RevWorkForceProject.Login - Login successful for userId 1012, role MANAGER
+2026-01-30 12:25:39 [main] INFO  rev.co.menu.ManagerMenu - Manager 2012 logged in
+2026-01-30 12:25:39 [main] INFO  rev.co.menu.ManagerMenu - Displaying Manager Menu
+2026-01-30 12:25:46 [main] INFO  rev.co.menu.ManagerMenu - Manager 2012 selected option 1
+2026-01-30 12:25:46 [main] INFO  rev.co.menu.ManagerMenu - Displaying Manager Menu
+2026-01-30 12:26:20 [main] INFO  rev.co.menu.ManagerMenu - Manager 2012 selected option 2
+2026-01-30 12:26:20 [main] INFO  rev.co.menu.ManagerMenu - Displaying Manager Menu
+2026-01-30 12:26:38 [main] INFO  rev.co.menu.ManagerMenu - Manager 2012 selected option 9
+2026-01-30 12:26:38 [main] WARN  rev.co.Service.ManagerService - ===== COMPANY ANNOUNCEMENTS =====
+2026-01-30 12:26:38 [main] INFO  rev.co.Service.ManagerService - 2026-01-30 12:07:31.773 | 15 holiday updated | so take holiday
+2026-01-30 12:26:38 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 14:56:27.282 | Tommorow | due to bundh
+2026-01-30 12:26:38 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:41:33.668 | Holiday Notice | Office will be closed from Jan 14 to Jan 16 for Sankranti
+2026-01-30 12:26:38 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:41:33.664 | WFH Policy Update | Employees can work from home two days a week
+2026-01-30 12:26:38 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:31:17.608 | Holiday Notice | Office will be closed from Jan 14 to Jan 16 for Sankranti
+2026-01-30 12:26:38 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:31:17.597 | WFH Policy Update | Employees can work from home two days a week
+2026-01-30 12:26:38 [main] INFO  rev.co.menu.ManagerMenu - Displaying Manager Menu
+2026-01-30 12:27:23 [main] INFO  rev.co.menu.ManagerMenu - Manager 2012 selected option 0
+2026-01-30 12:27:23 [main] INFO  rev.co.menu.ManagerMenu - Manager 2012 logged out
+2026-01-30 12:27:33 [main] WARN  rev.co.util.RevWorkForceProject.Login - Invalid login attempt for employeeId 1002
+2026-01-30 12:27:47 [main] INFO  rev.co.util.RevWorkForceProject.Login - Login successful for userId 1, role ADMIN
+2026-01-30 12:27:47 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 logged into Admin Menu
+2026-01-30 12:27:47 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 12:27:51 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 1
+2026-01-30 12:27:51 [main] INFO  rev.co.Service.AdminService - Admin 1001 started Add Employee
+2026-01-30 12:33:21 [main] INFO  rev.co.util.RevWorkForceProject.Login - Login successful for userId 1, role ADMIN
+2026-01-30 12:33:21 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 logged into Admin Menu
+2026-01-30 12:33:21 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 12:33:26 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 1
+2026-01-30 12:33:26 [main] INFO  rev.co.Service.AdminService - Admin 1001 started Add Employee

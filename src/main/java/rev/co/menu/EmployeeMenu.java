@@ -30,10 +30,10 @@ public class EmployeeMenu {
 	            System.out.println("6. View Notifications");
 	            System.out.println("7. Mark Attendance");
 	            System.out.println("8. View My Attendance");
-	            System.out.println("9. View Performance Reviews");
-	            System.out.println("10. Set Goals");
-	            System.out.println("11. View Company Announcements");
-	            System.out.println("12. View My Team");
+//	            System.out.println("9. View Performance Reviews");
+	            System.out.println("9. Set Goals");
+	            System.out.println("10. View Company Announcements");
+	            System.out.println("11. View My Team");
 	            System.out.println("0. Logout");
 
 	            System.out.print("Enter choice: ");

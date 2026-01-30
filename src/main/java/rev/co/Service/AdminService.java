@@ -8,7 +8,22 @@ import rev.co.DB.DBUtil;
 import java.sql.*;
 import java.util.Scanner;
 public class AdminService {
+	//helper method
+	private static boolean employeeIdExists(Connection con, int empId) throws SQLException {
+	    String sql = "SELECT COUNT(*) FROM employees WHERE employee_id = ?";
+	    try (PreparedStatement ps = con.prepareStatement(sql)) {
+	        ps.setInt(1, empId);
+	        ResultSet rs = ps.executeQuery();
+	        rs.next();
+	        return rs.getInt(1) > 0;
+	    }
+	}
+//mail
+	private static boolean isValidGmail(String email) {
+	    return email != null && email.matches("^[A-Za-z0-9._%+-]+@gmail\\.com$");
+	}
 
+	
 
 	    private static final Logger logger =
 	            LogManager.getLogger(AdminService.class);
@@ -22,16 +37,51 @@ public class AdminService {
 	            con.setAutoCommit(false); // start transaction
 
 	            // ---------------- Employee Input ----------------
-	            System.out.print("Employee ID: ");
-	            int empId = sc.nextInt();
+	            int empId;
+	            while (true) {
+	                System.out.print("Employee ID: ");
+	                empId = sc.nextInt();
+
+	                if (employeeIdExists(con, empId)) {
+	                    System.out.println("❌ Employee ID already exists! Please enter another ID.");
+	                } else {
+	                    break;
+	                }
+	            }
 
 	            System.out.print("Name: ");
 	            sc.nextLine();
 	            String name = sc.nextLine();
 
-	            System.out.print("Email: ");
-	            String email = sc.next();
+	            String email;
+	            while (true) {
+	                System.out.print("Email (must be @gmail.com): ");
+	                email = sc.next().trim();
 
+	                if (isValidGmail(email)) {
+	                    break;
+	                } else {
+	                    System.out.println("❌ Invalid email! Only Gmail addresses are allowed.");
+	                }
+	            }
+	            System.out.print("Set Password for Employee: ");
+	            String password = sc.next();
+	            System.out.print("Add as (1-Employee / 2-Manager): ");
+	            int roleChoice = sc.nextInt();
+	            String role;
+	            int managerId1 = 0; // default
+
+	            if (roleChoice == 1) {
+	                role = "EMPLOYEE";
+
+	               
+	            } else if (roleChoice == 2) {
+	                role = "MANAGER";
+	                managerId1 = 0; // managers have no manager above them
+	            } else {
+	                System.out.println("❌ Invalid choice!");
+	                return;
+	            }
 	            System.out.print("Phone: ");
 	            String phone = sc.next();
 
@@ -110,9 +160,9 @@ public class AdminService {
 	            }
 	            // ---------------- Insert Employee ----------------
 	            String sqlEmp = "INSERT INTO employees " +
-	                    "(employee_id, name, email, phone, address, dob, joining_date, department_id, designation_id, manager_id, salary, status) " +
-	                    "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
-
+	                    "(employee_id, name, email, phone, address, dob, joining_date, " +
+	                    "department_id, designation_id, manager_id, salary, status, password, role) " +
+	                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	            try (PreparedStatement ps = con.prepareStatement(sqlEmp)) {
 	                ps.setInt(1, empId);
 	                ps.setString(2, name);
@@ -127,7 +177,8 @@ public class AdminService {
 	                else ps.setInt(10, managerId);
 	                ps.setDouble(11, salary);
 	                ps.setString(12, "ACTIVE");
-
+	                ps.setString(13, password); 
+	                ps.setString(14, role);
 	                int rows = ps.executeUpdate();
 	                if (rows == 0) {
 	                    System.out.println("❌ Employee not added!");
@@ -135,16 +186,18 @@ public class AdminService {
 	                    return;
 	                }
 	            }
-
-	            // ---------------- Insert Default User ----------------
-	            String defaultPassword = "employee@123";
+	           
+	            
+	         // ---------------- Insert into Users table ----------------
 	            String sqlUser = "INSERT INTO users (user_id, employee_id, password, role) " +
-	                    "VALUES (USER_SEQ.NEXTVAL, ?, ?, 'EMPLOYEE')";
+	                             "VALUES (USER_SEQ.NEXTVAL, ?, ?, ?)";
 	            try (PreparedStatement psUser = con.prepareStatement(sqlUser)) {
 	                psUser.setInt(1, empId);
-	                psUser.setString(2, defaultPassword);
+	                psUser.setString(2, password);
+	                psUser.setString(3, role);
 	                psUser.executeUpdate();
 	            }
+
 
 	            // ---------------- Initialize Leave Balance ----------------
 	            String sqlLeaveTypes = "SELECT leave_type_id FROM leave_types";
@@ -182,43 +235,79 @@ public class AdminService {
 
 	 // ================= VIEW EMPLOYEES =================
 	    public static void viewEmployees(int adminId) {
-
 	        logger.info("Admin {} viewing employees", adminId);
 
-	        String sql = "SELECT employee_id, name, email, phone, status FROM employees";
+	        try (Connection con = DBUtil.getConnection()) {
 
-	        try (Connection con = DBUtil.getConnection();
-	             Statement st = con.createStatement();
-	             ResultSet rs = st.executeQuery(sql)) {
+	            // ---------------- Employees ----------------
+	            String sqlEmployees = "SELECT employee_id, name, email, phone, status " +
+	                    "FROM employees " +
+	                    "WHERE employee_id NOT IN (SELECT DISTINCT manager_id FROM employees WHERE manager_id IS NOT NULL) " +
+	                    "ORDER BY employee_id ASC";
 
-	            System.out.println("\n========== EMPLOYEE LIST ==========");
-	            System.out.printf("%-10s %-15s %-20s %-15s %-10s%n",
-	                    "ID", "Name", "Email", "Phone", "Status");
-	            System.out.println("---------------------------------------------------------------");
+	            try (Statement st = con.createStatement();
+	                 ResultSet rs = st.executeQuery(sqlEmployees)) {
 
-	            boolean found = false;
+	                System.out.println("\n========== EMPLOYEE LIST ==========");
+	                System.out.printf("%-10s %-15s %-30s %-15s %-10s%n",
+	                        "ID", "Name", "Email", "Phone", "Status");
+	                System.out.println("---------------------------------------------------------------");
 
-	            while (rs.next()) {
-	                found = true;
-	                System.out.printf("%-10d %-15s %-20s %-15s %-10s%n",
-	                        rs.getInt("employee_id"),
-	                        rs.getString("name"),
-	                        rs.getString("email"),
-	                        rs.getString("phone"),
-	                        rs.getString("status"));
+	                boolean found = false;
+	                while (rs.next()) {
+	                    found = true;
+	                    System.out.printf("%-10d %-15s %-30s %-15s %-10s%n",
+	                            rs.getInt("employee_id"),
+	                            rs.getString("name"),
+	                            rs.getString("email"),
+	                            rs.getString("phone"),
+	                            rs.getString("status"));
+	                }
+
+	                if (!found) {
+	                    System.out.println("No employees found.");
+	                }
+
+	                System.out.println("===================================\n");
 	            }
 
-	            if (!found) {
-	                System.out.println("No employees found.");
+	            // ---------------- Managers ----------------
+	            String sqlManagers = "SELECT employee_id, name, email, phone, status " +
+	                    "FROM employees " +
+	                    "WHERE employee_id IN (SELECT DISTINCT manager_id FROM employees WHERE manager_id IS NOT NULL) " +
+	                    "ORDER BY employee_id ASC";
+
+	            try (Statement st = con.createStatement();
+	                 ResultSet rs = st.executeQuery(sqlManagers)) {
+
+	                System.out.println("\n========== MANAGER LIST ==========");
+	                System.out.printf("%-10s %-15s %-30s %-15s %-10s%n",
+	                        "ID", "Name", "Email", "Phone", "Status");
+	                System.out.println("---------------------------------------------------------------");
+
+	                boolean found = false;
+	                while (rs.next()) {
+	                    found = true;
+	                    System.out.printf("%-10d %-15s %-30s %-15s %-10s%n",
+	                            rs.getInt("employee_id"),
+	                            rs.getString("name"),
+	                            rs.getString("email"),
+	                            rs.getString("phone"),
+	                            rs.getString("status"));
+	                }
+
+	                if (!found) {
+	                    System.out.println("No managers found.");
+	                }
+
+	                System.out.println("===================================\n");
 	            }
 
-	            System.out.println("===================================\n");
-
-	            DBUtil.logAction(adminId, "Viewed employees");
+	            DBUtil.logAction(adminId, "Viewed employees and managers");
 
 	        } catch (SQLException e) {
-	            System.out.println("❌ Error while fetching employees!");
-	            logger.error("Error while viewing employees", e);
+	            System.out.println("❌ Error while fetching employees/managers!");
+	            logger.error("Error while viewing employees/managers", e);
 	        }
 	    }
 
@@ -657,27 +746,44 @@ public class AdminService {
 
 	        try (Connection con = DBUtil.getConnection()) {
 
-	            // Use sequence for notification_id
+	            // Optional: Check if employee exists
+	            String checkEmp = "SELECT COUNT(*) FROM employees WHERE employee_id = ?";
+	            try (PreparedStatement psCheck = con.prepareStatement(checkEmp)) {
+	                psCheck.setInt(1, empId);
+	                ResultSet rs = psCheck.executeQuery();
+	                rs.next();
+	                if (rs.getInt(1) == 0) {
+	                    System.out.println("❌ Employee ID does not exist!");
+	                    return;
+	                }
+	            }
+
+	            // Insert notification using sequence
 	            String sql = "INSERT INTO notifications (notification_id, employee_id, message, type, created_at) " +
 	                         "VALUES (notification_seq.NEXTVAL, ?, ?, ?, SYSDATE)";
 
-	            PreparedStatement ps = con.prepareStatement(sql);
-	            ps.setInt(1, empId);
-	            ps.setString(2, msg);
-	            ps.setString(3, type);
+	            try (PreparedStatement ps = con.prepareStatement(sql)) {
+	                ps.setInt(1, empId);
+	                ps.setString(2, msg);
+	                ps.setString(3, type);
 
-	            int rows = ps.executeUpdate();
-
-	            if (rows > 0) {
-	                System.out.println("✅ Notification sent successfully!");
-	                DBUtil.logAction(adminId, "Sent " + type + " notification to employee " + empId);
-	            } else {
-	                System.out.println("⚠️ Notification not sent.");
+	                int rows = ps.executeUpdate();
+	                if (rows > 0) {
+	                    System.out.println("✅ Notification sent successfully!");
+	                    DBUtil.logAction(adminId, "Sent " + type + " notification to employee " + empId);
+	                } else {
+	                    System.out.println("⚠️ Notification not sent.");
+	                }
 	            }
 
-	        } catch (Exception e) {
+	        } catch (SQLIntegrityConstraintViolationException e) {
+	            System.out.println("❌ Constraint violation: Notification ID or employee may be invalid.");
+	            logger.error("Constraint violation while sending notification", e);
+
+	        } catch (SQLException e) {
 	            System.out.println("❌ Error while sending notification.");
 	            logger.error("Error sending notification", e);
+	            e.printStackTrace();
 	        }
 	    }
 
