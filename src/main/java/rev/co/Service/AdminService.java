@@ -7,7 +7,7 @@ import rev.co.DB.DBUtil;
 
 import java.sql.*;
 import java.util.Scanner;
-public class AdminService {
+public class AdminService  {
 	//helper method
 	private static boolean employeeIdExists(Connection con, int empId) throws SQLException {
 	    String sql = "SELECT COUNT(*) FROM employees WHERE employee_id = ?";

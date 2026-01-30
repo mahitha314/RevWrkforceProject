@@ -66,18 +66,16 @@ public class EmployeeMenu {
 	            case 8:
 	                EmployeeService.viewAttendance(employeeId);
 	                break;
+//	            case 9:
+//	                EmployeeService.viewPerformance(employeeId);
+//	                break;
 	            case 9:
-	                EmployeeService.viewPerformance(employeeId);
-	                break;
-	            case 10:
 	                EmployeeService.setGoals(employeeId);
 	                break;
-	            case 11:
+	            case 10:
 	                EmployeeService.viewAnnouncements();
 	                break;
-	            case 12:
-	                EmployeeService.viewTeam(employeeId);
-	                break;
+	           
 	            case 0:
 	                logger.info("Employee {} logged out", employeeId);
 	                break;

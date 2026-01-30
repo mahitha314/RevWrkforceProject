@@ -342,3 +342,508 @@ java.util.InputMismatchException: null
 2026-01-30 12:33:21 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
 2026-01-30 12:33:26 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 1
 2026-01-30 12:33:26 [main] INFO  rev.co.Service.AdminService - Admin 1001 started Add Employee
+2026-01-30 12:51:01 [main] INFO  rev.co.Service.EmployeeService - Employee 3001 | Casual Leave : 8
+2026-01-30 12:51:01 [main] INFO  rev.co.Service.EmployeeService - Employee 3001 | Sick Leave : 8
+2026-01-30 12:51:01 [main] INFO  rev.co.Service.EmployeeService - Employee 3001 | Paid Leave : 15
+2026-01-30 12:51:01 [main] INFO  rev.co.Service.EmployeeService - Employee 3001 | Privilege Leave : 6
+2026-01-30 12:51:01 [main] INFO  rev.co.Service.EmployeeService - Leave history viewed for employee 3001
+2026-01-30 12:51:01 [main] WARN  rev.co.Service.ManagerService - ===== TEAM ATTENDANCE =====
+2026-01-30 12:51:01 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-01 | Status: PRESENT
+2026-01-30 12:51:01 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-02 | Status: PRESENT
+2026-01-30 12:51:01 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-03 | Status: LEAVE
+2026-01-30 12:51:01 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-04 | Status: PRESENT
+2026-01-30 12:51:01 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-01 | Status: PRESENT
+2026-01-30 12:51:01 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-02 | Status: ABSENT
+2026-01-30 12:51:01 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-03 | Status: PRESENT
+2026-01-30 12:51:01 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-04 | Status: PRESENT
+2026-01-30 12:51:01 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-29 | Status: PRESENT
+2026-01-30 12:51:01 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-30 | Status: PRESENT
+2026-01-30 12:51:01 [main] WARN  rev.co.Service.ManagerService - ===== COMPANY ANNOUNCEMENTS =====
+2026-01-30 12:51:01 [main] INFO  rev.co.Service.ManagerService - 2026-01-30 12:07:31.773 | 15 holiday updated | so take holiday
+2026-01-30 12:51:01 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 14:56:27.282 | Tommorow | due to bundh
+2026-01-30 12:51:01 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:41:33.668 | Holiday Notice | Office will be closed from Jan 14 to Jan 16 for Sankranti
+2026-01-30 12:51:01 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:41:33.664 | WFH Policy Update | Employees can work from home two days a week
+2026-01-30 12:51:01 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:31:17.608 | Holiday Notice | Office will be closed from Jan 14 to Jan 16 for Sankranti
+2026-01-30 12:51:01 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:31:17.597 | WFH Policy Update | Employees can work from home two days a week
+2026-01-30 12:51:01 [main] WARN  rev.co.Service.ManagerService - ===== TEAM LEAVE CALENDAR =====
+2026-01-30 12:51:01 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-01-10 to 2026-01-17 | APPROVED
+2026-01-30 12:51:01 [main] WARN  rev.co.Service.ManagerService - Rahul Verma | 2026-02-03 to 2026-02-14 | PENDING
+2026-01-30 12:51:01 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-10 to 2026-02-12 | APPROVED
+2026-01-30 12:51:01 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-01-29 to 2026-01-30 | REJECTED
+2026-01-30 12:51:01 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-04-10 to 2026-04-12 | APPROVED
+2026-01-30 12:51:01 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-04 to 2026-02-06 | REJECTED
+2026-01-30 12:51:01 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-12 to 2026-02-14 | APPROVED
+2026-01-30 12:51:01 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-14 to 2026-02-17 | APPROVED
+2026-01-30 12:51:01 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-13 to 2026-02-15 | APPROVED
+2026-01-30 12:51:01 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-15 to 2026-02-16 | APPROVED
+2026-01-30 12:51:01 [main] INFO  rev.co.Service.AdminService - Admin 1 viewing employees
+2026-01-30 12:51:01 [main] INFO  rev.co.Service.AdminService - Admin 1 viewing audit logs
+2026-01-30 12:52:04 [main] INFO  rev.co.Service.EmployeeService - Leave history viewed for employee 3001
+2026-01-30 12:52:04 [main] WARN  rev.co.Service.ManagerService - ===== TEAM ATTENDANCE =====
+2026-01-30 12:52:04 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-01 | Status: PRESENT
+2026-01-30 12:52:04 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-02 | Status: PRESENT
+2026-01-30 12:52:04 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-03 | Status: LEAVE
+2026-01-30 12:52:04 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-04 | Status: PRESENT
+2026-01-30 12:52:04 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-01 | Status: PRESENT
+2026-01-30 12:52:04 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-02 | Status: ABSENT
+2026-01-30 12:52:04 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-03 | Status: PRESENT
+2026-01-30 12:52:04 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-04 | Status: PRESENT
+2026-01-30 12:52:04 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-29 | Status: PRESENT
+2026-01-30 12:52:04 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-30 | Status: PRESENT
+2026-01-30 12:52:04 [main] WARN  rev.co.Service.ManagerService - ===== COMPANY ANNOUNCEMENTS =====
+2026-01-30 12:52:04 [main] INFO  rev.co.Service.ManagerService - 2026-01-30 12:07:31.773 | 15 holiday updated | so take holiday
+2026-01-30 12:52:04 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 14:56:27.282 | Tommorow | due to bundh
+2026-01-30 12:52:04 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:41:33.668 | Holiday Notice | Office will be closed from Jan 14 to Jan 16 for Sankranti
+2026-01-30 12:52:04 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:41:33.664 | WFH Policy Update | Employees can work from home two days a week
+2026-01-30 12:52:04 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:31:17.608 | Holiday Notice | Office will be closed from Jan 14 to Jan 16 for Sankranti
+2026-01-30 12:52:04 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:31:17.597 | WFH Policy Update | Employees can work from home two days a week
+2026-01-30 12:52:04 [main] WARN  rev.co.Service.ManagerService - ===== TEAM LEAVE CALENDAR =====
+2026-01-30 12:52:04 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-01-10 to 2026-01-17 | APPROVED
+2026-01-30 12:52:04 [main] WARN  rev.co.Service.ManagerService - Rahul Verma | 2026-02-03 to 2026-02-14 | PENDING
+2026-01-30 12:52:04 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-10 to 2026-02-12 | APPROVED
+2026-01-30 12:52:04 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-01-29 to 2026-01-30 | REJECTED
+2026-01-30 12:52:04 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-04-10 to 2026-04-12 | APPROVED
+2026-01-30 12:52:04 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-04 to 2026-02-06 | REJECTED
+2026-01-30 12:52:04 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-12 to 2026-02-14 | APPROVED
+2026-01-30 12:52:04 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-14 to 2026-02-17 | APPROVED
+2026-01-30 12:52:04 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-13 to 2026-02-15 | APPROVED
+2026-01-30 12:52:04 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-15 to 2026-02-16 | APPROVED
+2026-01-30 12:52:04 [main] INFO  rev.co.Service.AdminService - Admin 1 viewing employees
+2026-01-30 12:52:04 [main] INFO  rev.co.Service.AdminService - Admin 1 viewing audit logs
+2026-01-30 12:52:21 [main] INFO  rev.co.Service.EmployeeService - Employee 3001 | Casual Leave : 8
+2026-01-30 12:52:21 [main] INFO  rev.co.Service.EmployeeService - Employee 3001 | Sick Leave : 8
+2026-01-30 12:52:21 [main] INFO  rev.co.Service.EmployeeService - Employee 3001 | Paid Leave : 15
+2026-01-30 12:52:21 [main] INFO  rev.co.Service.EmployeeService - Employee 3001 | Privilege Leave : 6
+2026-01-30 12:52:21 [main] INFO  rev.co.Service.EmployeeService - Leave history viewed for employee 3001
+2026-01-30 12:52:22 [main] WARN  rev.co.Service.ManagerService - ===== TEAM ATTENDANCE =====
+2026-01-30 12:52:22 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-01 | Status: PRESENT
+2026-01-30 12:52:22 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-02 | Status: PRESENT
+2026-01-30 12:52:22 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-03 | Status: LEAVE
+2026-01-30 12:52:22 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-04 | Status: PRESENT
+2026-01-30 12:52:22 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-01 | Status: PRESENT
+2026-01-30 12:52:22 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-02 | Status: ABSENT
+2026-01-30 12:52:22 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-03 | Status: PRESENT
+2026-01-30 12:52:22 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-04 | Status: PRESENT
+2026-01-30 12:52:22 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-29 | Status: PRESENT
+2026-01-30 12:52:22 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-30 | Status: PRESENT
+2026-01-30 12:52:22 [main] WARN  rev.co.Service.ManagerService - ===== COMPANY ANNOUNCEMENTS =====
+2026-01-30 12:52:22 [main] INFO  rev.co.Service.ManagerService - 2026-01-30 12:07:31.773 | 15 holiday updated | so take holiday
+2026-01-30 12:52:22 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 14:56:27.282 | Tommorow | due to bundh
+2026-01-30 12:52:22 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:41:33.668 | Holiday Notice | Office will be closed from Jan 14 to Jan 16 for Sankranti
+2026-01-30 12:52:22 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:41:33.664 | WFH Policy Update | Employees can work from home two days a week
+2026-01-30 12:52:22 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:31:17.608 | Holiday Notice | Office will be closed from Jan 14 to Jan 16 for Sankranti
+2026-01-30 12:52:22 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:31:17.597 | WFH Policy Update | Employees can work from home two days a week
+2026-01-30 12:52:22 [main] WARN  rev.co.Service.ManagerService - ===== TEAM LEAVE CALENDAR =====
+2026-01-30 12:52:22 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-01-10 to 2026-01-17 | APPROVED
+2026-01-30 12:52:22 [main] WARN  rev.co.Service.ManagerService - Rahul Verma | 2026-02-03 to 2026-02-14 | PENDING
+2026-01-30 12:52:22 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-10 to 2026-02-12 | APPROVED
+2026-01-30 12:52:22 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-01-29 to 2026-01-30 | REJECTED
+2026-01-30 12:52:22 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-04-10 to 2026-04-12 | APPROVED
+2026-01-30 12:52:22 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-04 to 2026-02-06 | REJECTED
+2026-01-30 12:52:22 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-12 to 2026-02-14 | APPROVED
+2026-01-30 12:52:22 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-14 to 2026-02-17 | APPROVED
+2026-01-30 12:52:22 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-13 to 2026-02-15 | APPROVED
+2026-01-30 12:52:22 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-15 to 2026-02-16 | APPROVED
+2026-01-30 12:52:22 [main] INFO  rev.co.Service.AdminService - Admin 1 viewing employees
+2026-01-30 12:52:22 [main] INFO  rev.co.Service.AdminService - Admin 1 viewing audit logs
+2026-01-30 12:52:32 [main] ERROR rev.co.Service.EmployeeService - Error marking attendance for employee 301
+java.sql.SQLIntegrityConstraintViolationException: ORA-02291: integrity constraint (SYSTEM.FK_ATT_EMP) violated - parent key not found
+
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:628) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:562) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1145) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:726) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:291) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:492) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:148) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1038) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OracleStatement.executeSQLStatement(OracleStatement.java:1507) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1287) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3735) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeLargeUpdate(OraclePreparedStatement.java:3910) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3889) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:992) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at rev.co.Service.EmployeeService.markAttendance(EmployeeService.java:314) ~[classes/:?]
+	at rev.co.util.RevWorkForceProject.EmployeeServiseTest.lambda$2(EmployeeServiseTest.java:52) ~[test-classes/:?]
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:49) ~[junit-jupiter-api-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:36) ~[junit-jupiter-api-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3168) ~[junit-jupiter-api-5.10.1.jar:5.10.1]
+	at rev.co.util.RevWorkForceProject.EmployeeServiseTest.testMarkAttendance_Success(EmployeeServiseTest.java:51) ~[test-classes/:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728) ~[junit-platform-commons-1.10.1.jar:1.10.1]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at java.util.ArrayList.forEach(ArrayList.java:1596) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at java.util.ArrayList.forEach(ArrayList.java:1596) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) [junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) [junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) [junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:94) [junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:52) [junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:70) [junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.eclipse.jdt.internal.junit5.runner.JUnit5TestReference.run(JUnit5TestReference.java:100) [.cp/:?]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:40) [.cp/:?]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:520) [.cp/:?]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:748) [.cp/:?]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:443) [.cp/:?]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:211) [.cp/:?]
+Caused by: oracle.jdbc.OracleDatabaseException: ORA-02291: integrity constraint (SYSTEM.FK_ATT_EMP) violated - parent key not found
+
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:632) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	... 87 more
+2026-01-30 12:52:32 [main] INFO  rev.co.Service.EmployeeService - Leave history viewed for employee 301
+2026-01-30 12:52:32 [main] WARN  rev.co.Service.ManagerService - ===== TEAM ATTENDANCE =====
+2026-01-30 12:52:32 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-01 | Status: PRESENT
+2026-01-30 12:52:32 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-02 | Status: PRESENT
+2026-01-30 12:52:32 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-03 | Status: LEAVE
+2026-01-30 12:52:32 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-04 | Status: PRESENT
+2026-01-30 12:52:32 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-01 | Status: PRESENT
+2026-01-30 12:52:32 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-02 | Status: ABSENT
+2026-01-30 12:52:32 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-03 | Status: PRESENT
+2026-01-30 12:52:32 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-04 | Status: PRESENT
+2026-01-30 12:52:32 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-29 | Status: PRESENT
+2026-01-30 12:52:32 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-30 | Status: PRESENT
+2026-01-30 12:52:32 [main] WARN  rev.co.Service.ManagerService - ===== COMPANY ANNOUNCEMENTS =====
+2026-01-30 12:52:32 [main] INFO  rev.co.Service.ManagerService - 2026-01-30 12:07:31.773 | 15 holiday updated | so take holiday
+2026-01-30 12:52:32 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 14:56:27.282 | Tommorow | due to bundh
+2026-01-30 12:52:32 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:41:33.668 | Holiday Notice | Office will be closed from Jan 14 to Jan 16 for Sankranti
+2026-01-30 12:52:32 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:41:33.664 | WFH Policy Update | Employees can work from home two days a week
+2026-01-30 12:52:32 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:31:17.608 | Holiday Notice | Office will be closed from Jan 14 to Jan 16 for Sankranti
+2026-01-30 12:52:32 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:31:17.597 | WFH Policy Update | Employees can work from home two days a week
+2026-01-30 12:52:32 [main] WARN  rev.co.Service.ManagerService - ===== TEAM LEAVE CALENDAR =====
+2026-01-30 12:52:32 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-01-10 to 2026-01-17 | APPROVED
+2026-01-30 12:52:32 [main] WARN  rev.co.Service.ManagerService - Rahul Verma | 2026-02-03 to 2026-02-14 | PENDING
+2026-01-30 12:52:32 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-10 to 2026-02-12 | APPROVED
+2026-01-30 12:52:32 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-01-29 to 2026-01-30 | REJECTED
+2026-01-30 12:52:32 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-04-10 to 2026-04-12 | APPROVED
+2026-01-30 12:52:32 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-04 to 2026-02-06 | REJECTED
+2026-01-30 12:52:32 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-12 to 2026-02-14 | APPROVED
+2026-01-30 12:52:32 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-14 to 2026-02-17 | APPROVED
+2026-01-30 12:52:32 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-13 to 2026-02-15 | APPROVED
+2026-01-30 12:52:32 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-15 to 2026-02-16 | APPROVED
+2026-01-30 12:52:32 [main] INFO  rev.co.Service.AdminService - Admin 1 viewing employees
+2026-01-30 12:52:33 [main] INFO  rev.co.Service.AdminService - Admin 1 viewing audit logs
+2026-01-30 13:07:36 [main] ERROR rev.co.Service.EmployeeService - Error marking attendance for employee 301
+java.sql.SQLIntegrityConstraintViolationException: ORA-02291: integrity constraint (SYSTEM.FK_ATT_EMP) violated - parent key not found
+
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:628) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:562) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1145) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:726) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:291) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:492) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:148) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1038) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OracleStatement.executeSQLStatement(OracleStatement.java:1507) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1287) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3735) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeLargeUpdate(OraclePreparedStatement.java:3910) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3889) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:992) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at rev.co.Service.EmployeeService.markAttendance(EmployeeService.java:314) ~[classes/:?]
+	at rev.co.util.RevWorkForceProject.EmployeeServiseTest.lambda$2(EmployeeServiseTest.java:52) ~[test-classes/:?]
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:49) ~[junit-jupiter-api-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:36) ~[junit-jupiter-api-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3168) ~[junit-jupiter-api-5.10.1.jar:5.10.1]
+	at rev.co.util.RevWorkForceProject.EmployeeServiseTest.testMarkAttendance_Success(EmployeeServiseTest.java:51) ~[test-classes/:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728) ~[junit-platform-commons-1.10.1.jar:1.10.1]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at java.util.ArrayList.forEach(ArrayList.java:1596) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at java.util.ArrayList.forEach(ArrayList.java:1596) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) [junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) [junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) [junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:94) [junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:52) [junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:70) [junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.eclipse.jdt.internal.junit5.runner.JUnit5TestReference.run(JUnit5TestReference.java:100) [.cp/:?]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:40) [.cp/:?]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:520) [.cp/:?]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:748) [.cp/:?]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:443) [.cp/:?]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:211) [.cp/:?]
+Caused by: oracle.jdbc.OracleDatabaseException: ORA-02291: integrity constraint (SYSTEM.FK_ATT_EMP) violated - parent key not found
+
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:632) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	... 87 more
+2026-01-30 13:07:36 [main] INFO  rev.co.Service.EmployeeService - Leave history viewed for employee 301
+2026-01-30 13:07:36 [main] WARN  rev.co.Service.ManagerService - ===== TEAM ATTENDANCE =====
+2026-01-30 13:07:36 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-01 | Status: PRESENT
+2026-01-30 13:07:36 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-02 | Status: PRESENT
+2026-01-30 13:07:36 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-03 | Status: LEAVE
+2026-01-30 13:07:36 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-04 | Status: PRESENT
+2026-01-30 13:07:36 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-01 | Status: PRESENT
+2026-01-30 13:07:36 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-02 | Status: ABSENT
+2026-01-30 13:07:36 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-03 | Status: PRESENT
+2026-01-30 13:07:36 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-04 | Status: PRESENT
+2026-01-30 13:07:36 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-29 | Status: PRESENT
+2026-01-30 13:07:36 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-30 | Status: PRESENT
+2026-01-30 13:07:37 [main] WARN  rev.co.Service.ManagerService - ===== COMPANY ANNOUNCEMENTS =====
+2026-01-30 13:07:37 [main] INFO  rev.co.Service.ManagerService - 2026-01-30 12:07:31.773 | 15 holiday updated | so take holiday
+2026-01-30 13:07:37 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 14:56:27.282 | Tommorow | due to bundh
+2026-01-30 13:07:37 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:41:33.668 | Holiday Notice | Office will be closed from Jan 14 to Jan 16 for Sankranti
+2026-01-30 13:07:37 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:41:33.664 | WFH Policy Update | Employees can work from home two days a week
+2026-01-30 13:07:37 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:31:17.608 | Holiday Notice | Office will be closed from Jan 14 to Jan 16 for Sankranti
+2026-01-30 13:07:37 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:31:17.597 | WFH Policy Update | Employees can work from home two days a week
+2026-01-30 13:07:37 [main] WARN  rev.co.Service.ManagerService - ===== TEAM LEAVE CALENDAR =====
+2026-01-30 13:07:37 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-01-10 to 2026-01-17 | APPROVED
+2026-01-30 13:07:37 [main] WARN  rev.co.Service.ManagerService - Rahul Verma | 2026-02-03 to 2026-02-14 | PENDING
+2026-01-30 13:07:37 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-10 to 2026-02-12 | APPROVED
+2026-01-30 13:07:37 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-01-29 to 2026-01-30 | REJECTED
+2026-01-30 13:07:37 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-04-10 to 2026-04-12 | APPROVED
+2026-01-30 13:07:37 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-04 to 2026-02-06 | REJECTED
+2026-01-30 13:07:37 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-12 to 2026-02-14 | APPROVED
+2026-01-30 13:07:37 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-14 to 2026-02-17 | APPROVED
+2026-01-30 13:07:37 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-13 to 2026-02-15 | APPROVED
+2026-01-30 13:07:37 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-15 to 2026-02-16 | APPROVED
+2026-01-30 13:07:37 [main] INFO  rev.co.Service.AdminService - Admin 1 viewing employees
+2026-01-30 13:07:37 [main] INFO  rev.co.Service.AdminService - Admin 1 viewing audit logs
+2026-01-30 14:08:12 [main] INFO  rev.co.util.RevWorkForceProject.Login - Login successful for userId 1, role ADMIN
+2026-01-30 14:08:12 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 logged into Admin Menu
+2026-01-30 14:08:12 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 14:08:21 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 2
+2026-01-30 14:08:21 [main] INFO  rev.co.Service.AdminService - Admin 1001 viewing employees
+2026-01-30 14:08:21 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 14:08:32 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 0
+2026-01-30 14:08:32 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 logged out
+2026-01-30 14:09:00 [main] INFO  rev.co.util.RevWorkForceProject.Login - Login successful for userId 1020, role EMPLOYEE
+2026-01-30 14:09:00 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3020 logged in
+2026-01-30 14:09:00 [main] INFO  rev.co.menu.EmployeeMenu - Displaying Employee Menu
+2026-01-30 14:09:07 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3020 selected option 2
+2026-01-30 14:09:48 [main] INFO  rev.co.menu.EmployeeMenu - Displaying Employee Menu
+2026-01-30 14:09:54 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3020 selected option 3
+2026-01-30 14:09:54 [main] INFO  rev.co.Service.EmployeeService - Leave history viewed for employee 3020
+2026-01-30 14:09:54 [main] INFO  rev.co.menu.EmployeeMenu - Displaying Employee Menu
+2026-01-30 14:10:01 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3020 selected option 0
+2026-01-30 14:10:01 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3020 logged out
+2026-01-30 14:10:23 [main] INFO  rev.co.util.RevWorkForceProject.Login - Login successful for userId 1020, role EMPLOYEE
+2026-01-30 14:10:23 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3020 logged in
+2026-01-30 14:10:23 [main] INFO  rev.co.menu.EmployeeMenu - Displaying Employee Menu
+2026-01-30 14:10:29 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3020 selected option 11
+2026-01-30 14:10:29 [main] INFO  rev.co.menu.EmployeeMenu - Displaying Employee Menu
+2026-01-30 14:11:30 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3020 selected option 0
+2026-01-30 14:11:30 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3020 logged out
+2026-01-30 14:11:37 [main] INFO  rev.co.util.RevWorkForceProject.Login - Login successful for userId 1, role ADMIN
+2026-01-30 14:11:37 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 logged into Admin Menu
+2026-01-30 14:11:37 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 14:11:41 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 4
+2026-01-30 14:11:53 [main] INFO  rev.co.Service.AdminService - Admin 1001 assigning manager 2011 to employee 3020
+2026-01-30 14:11:53 [main] INFO  rev.co.Service.AdminService - Manager Sandhya assigned to employee 3020
+2026-01-30 14:11:53 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 14:12:02 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 selected option 0
+2026-01-30 14:12:02 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 logged out
+2026-01-30 14:12:09 [main] INFO  rev.co.util.RevWorkForceProject.Login - Login successful for userId 1020, role EMPLOYEE
+2026-01-30 14:12:09 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3020 logged in
+2026-01-30 14:12:09 [main] INFO  rev.co.menu.EmployeeMenu - Displaying Employee Menu
+2026-01-30 14:12:31 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3020 selected option 11
+2026-01-30 14:12:31 [main] INFO  rev.co.menu.EmployeeMenu - Displaying Employee Menu
+2026-01-30 14:15:12 [main] INFO  rev.co.util.RevWorkForceProject.Login - Login successful for userId 1020, role EMPLOYEE
+2026-01-30 14:15:13 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3020 logged in
+2026-01-30 14:15:13 [main] INFO  rev.co.menu.EmployeeMenu - Displaying Employee Menu
+2026-01-30 14:15:18 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3020 selected option 11
+2026-01-30 14:15:19 [main] INFO  rev.co.menu.EmployeeMenu - Displaying Employee Menu
+2026-01-30 14:22:29 [main] INFO  rev.co.util.RevWorkForceProject.Login - Login successful for userId 1020, role EMPLOYEE
+2026-01-30 14:22:29 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3020 logged in
+2026-01-30 14:22:29 [main] INFO  rev.co.menu.EmployeeMenu - Displaying Employee Menu
+2026-01-30 14:22:32 [main] INFO  rev.co.menu.EmployeeMenu - Employee 3020 selected option 11
+2026-01-30 14:22:33 [main] INFO  rev.co.menu.EmployeeMenu - Displaying Employee Menu
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - ===== TEAM ATTENDANCE =====
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-01 | Status: PRESENT
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-02 | Status: PRESENT
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-03 | Status: LEAVE
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-04 | Status: PRESENT
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-01 | Status: PRESENT
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-02 | Status: ABSENT
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-03 | Status: PRESENT
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-04 | Status: PRESENT
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-29 | Status: PRESENT
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-30 | Status: PRESENT
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - ===== TEAM ATTENDANCE =====
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-01 | Status: PRESENT
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-02 | Status: PRESENT
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-03 | Status: LEAVE
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-04 | Status: PRESENT
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-01 | Status: PRESENT
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-02 | Status: ABSENT
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-03 | Status: PRESENT
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-04 | Status: PRESENT
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-29 | Status: PRESENT
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-30 | Status: PRESENT
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - ===== COMPANY ANNOUNCEMENTS =====
+2026-01-30 14:35:49 [main] INFO  rev.co.Service.ManagerService - 2026-01-30 12:07:31.773 | 15 holiday updated | so take holiday
+2026-01-30 14:35:49 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 14:56:27.282 | Tommorow | due to bundh
+2026-01-30 14:35:49 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:41:33.668 | Holiday Notice | Office will be closed from Jan 14 to Jan 16 for Sankranti
+2026-01-30 14:35:49 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:41:33.664 | WFH Policy Update | Employees can work from home two days a week
+2026-01-30 14:35:49 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:31:17.608 | Holiday Notice | Office will be closed from Jan 14 to Jan 16 for Sankranti
+2026-01-30 14:35:49 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:31:17.597 | WFH Policy Update | Employees can work from home two days a week
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - ===== COMPANY ANNOUNCEMENTS =====
+2026-01-30 14:35:49 [main] INFO  rev.co.Service.ManagerService - 2026-01-30 12:07:31.773 | 15 holiday updated | so take holiday
+2026-01-30 14:35:49 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 14:56:27.282 | Tommorow | due to bundh
+2026-01-30 14:35:49 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:41:33.668 | Holiday Notice | Office will be closed from Jan 14 to Jan 16 for Sankranti
+2026-01-30 14:35:49 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:41:33.664 | WFH Policy Update | Employees can work from home two days a week
+2026-01-30 14:35:49 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:31:17.608 | Holiday Notice | Office will be closed from Jan 14 to Jan 16 for Sankranti
+2026-01-30 14:35:49 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:31:17.597 | WFH Policy Update | Employees can work from home two days a week
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - ===== TEAM LEAVE CALENDAR =====
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-01-10 to 2026-01-17 | APPROVED
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Rahul Verma | 2026-02-03 to 2026-02-14 | PENDING
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-10 to 2026-02-12 | APPROVED
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-01-29 to 2026-01-30 | REJECTED
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-04-10 to 2026-04-12 | APPROVED
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-04 to 2026-02-06 | REJECTED
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-12 to 2026-02-14 | APPROVED
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-14 to 2026-02-17 | APPROVED
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-13 to 2026-02-15 | APPROVED
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-15 to 2026-02-16 | APPROVED
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - ===== TEAM LEAVE CALENDAR =====
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-01-10 to 2026-01-17 | APPROVED
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Rahul Verma | 2026-02-03 to 2026-02-14 | PENDING
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-10 to 2026-02-12 | APPROVED
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-01-29 to 2026-01-30 | REJECTED
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-04-10 to 2026-04-12 | APPROVED
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-04 to 2026-02-06 | REJECTED
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-12 to 2026-02-14 | APPROVED
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-14 to 2026-02-17 | APPROVED
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-13 to 2026-02-15 | APPROVED
+2026-01-30 14:35:49 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-15 to 2026-02-16 | APPROVED
+2026-01-30 14:36:13 [main] WARN  rev.co.Service.ManagerService - ===== TEAM ATTENDANCE =====
+2026-01-30 14:36:13 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-01 | Status: PRESENT
+2026-01-30 14:36:13 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-02 | Status: PRESENT
+2026-01-30 14:36:13 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-03 | Status: LEAVE
+2026-01-30 14:36:13 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-04 | Status: PRESENT
+2026-01-30 14:36:13 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-01 | Status: PRESENT
+2026-01-30 14:36:13 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-02 | Status: ABSENT
+2026-01-30 14:36:13 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-03 | Status: PRESENT
+2026-01-30 14:36:13 [main] WARN  rev.co.Service.ManagerService - Employee: Rahul Verma | Date: 2026-01-04 | Status: PRESENT
+2026-01-30 14:36:13 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-29 | Status: PRESENT
+2026-01-30 14:36:13 [main] WARN  rev.co.Service.ManagerService - Employee: Anjali Sharma | Date: 2026-01-30 | Status: PRESENT
+2026-01-30 14:36:13 [main] WARN  rev.co.Service.ManagerService - ===== COMPANY ANNOUNCEMENTS =====
+2026-01-30 14:36:13 [main] INFO  rev.co.Service.ManagerService - 2026-01-30 12:07:31.773 | 15 holiday updated | so take holiday
+2026-01-30 14:36:13 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 14:56:27.282 | Tommorow | due to bundh
+2026-01-30 14:36:13 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:41:33.668 | Holiday Notice | Office will be closed from Jan 14 to Jan 16 for Sankranti
+2026-01-30 14:36:13 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:41:33.664 | WFH Policy Update | Employees can work from home two days a week
+2026-01-30 14:36:13 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:31:17.608 | Holiday Notice | Office will be closed from Jan 14 to Jan 16 for Sankranti
+2026-01-30 14:36:13 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:31:17.597 | WFH Policy Update | Employees can work from home two days a week
+2026-01-30 14:36:14 [main] WARN  rev.co.Service.ManagerService - ===== TEAM LEAVE CALENDAR =====
+2026-01-30 14:36:14 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-01-10 to 2026-01-17 | APPROVED
+2026-01-30 14:36:14 [main] WARN  rev.co.Service.ManagerService - Rahul Verma | 2026-02-03 to 2026-02-14 | PENDING
+2026-01-30 14:36:14 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-10 to 2026-02-12 | APPROVED
+2026-01-30 14:36:14 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-01-29 to 2026-01-30 | REJECTED
+2026-01-30 14:36:14 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-04-10 to 2026-04-12 | APPROVED
+2026-01-30 14:36:14 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-04 to 2026-02-06 | REJECTED
+2026-01-30 14:36:14 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-12 to 2026-02-14 | APPROVED
+2026-01-30 14:36:14 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-14 to 2026-02-17 | APPROVED
+2026-01-30 14:36:14 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-13 to 2026-02-15 | APPROVED
+2026-01-30 14:36:14 [main] WARN  rev.co.Service.ManagerService - Anjali Sharma | 2026-02-15 to 2026-02-16 | APPROVED
+2026-01-30 14:37:03 [main] WARN  rev.co.Service.ManagerService - ===== TEAM ATTENDANCE =====
+2026-01-30 14:37:03 [main] WARN  rev.co.Service.ManagerService - ⚠ No attendance records found for your team.
+2026-01-30 14:37:03 [main] WARN  rev.co.Service.ManagerService - ===== COMPANY ANNOUNCEMENTS =====
+2026-01-30 14:37:03 [main] INFO  rev.co.Service.ManagerService - 2026-01-30 12:07:31.773 | 15 holiday updated | so take holiday
+2026-01-30 14:37:03 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 14:56:27.282 | Tommorow | due to bundh
+2026-01-30 14:37:03 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:41:33.668 | Holiday Notice | Office will be closed from Jan 14 to Jan 16 for Sankranti
+2026-01-30 14:37:03 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:41:33.664 | WFH Policy Update | Employees can work from home two days a week
+2026-01-30 14:37:03 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:31:17.608 | Holiday Notice | Office will be closed from Jan 14 to Jan 16 for Sankranti
+2026-01-30 14:37:03 [main] INFO  rev.co.Service.ManagerService - 2026-01-29 00:31:17.597 | WFH Policy Update | Employees can work from home two days a week
+2026-01-30 14:37:03 [main] WARN  rev.co.Service.ManagerService - ===== TEAM LEAVE CALENDAR =====
+2026-01-30 14:37:03 [main] WARN  rev.co.Service.ManagerService - ⚠ No leave records found for your team.

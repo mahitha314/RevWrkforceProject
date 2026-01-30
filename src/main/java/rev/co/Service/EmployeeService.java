@@ -480,52 +480,7 @@ public class EmployeeService {
 	        }
 	    }
 
-	    // ===== Team =====
-	    public static void viewTeam(int empId) {
-	        try (Connection con = DBUtil.getConnection()) {
-
-	            // First, check if the employee is a manager (has team members)
-	            String sqlTeam = "SELECT employee_id, name, designation_id FROM employees WHERE manager_id=?";
-	            PreparedStatement psTeam = con.prepareStatement(sqlTeam);
-	            psTeam.setInt(1, empId);
-	            ResultSet rsTeam = psTeam.executeQuery();
-
-	            System.out.println("\n===== MY TEAM =====");
-	            boolean hasTeam = false;
-
-	            while (rsTeam.next()) {
-	                hasTeam = true;
-	                System.out.println(
-	                    "ID: " + rsTeam.getInt("employee_id") +
-	                    " | Name: " + rsTeam.getString("name") +
-	                    " | Designation: " + rsTeam.getInt("designation_id")
-	                );
-	            }
-
-	            // If no team members, show the manager of this employee
-	            if (!hasTeam) {
-	                String sqlManager = "SELECT manager_id, name FROM employees WHERE employee_id=?";
-	                PreparedStatement psMgr = con.prepareStatement(sqlManager);
-	                psMgr.setInt(1, empId);
-	                ResultSet rsMgr = psMgr.executeQuery();
-
-	                if (rsMgr.next() && rsMgr.getInt("manager_id") != 0) {
-	                    System.out.println("Your manager:");
-	                    System.out.println(
-	                        "ID: " + rsMgr.getInt("manager_id") +
-	                        " | Name: " + rsMgr.getString("name")
-	                    );
-	                } else {
-	                    System.out.println("⚠ No team members or manager assigned.");
-	                }
-	            }
-
-	        } catch (Exception e) {
-	            System.out.println("❌ Error viewing team");
-	            logger.error("Error viewing team for employee {}", empId, e);
-	        }
-	    }
-
+	   
 	    
 
 	    

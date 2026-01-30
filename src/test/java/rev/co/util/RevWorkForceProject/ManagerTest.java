@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import rev.co.Service.ManagerService;
 
 public class ManagerTest {
-	 private final int MANAGER_ID = 2001;
+	 private final int MANAGER_ID = 201;
 	 @Test
 	    void testViewTeam_Success() {
 	        assertDoesNotThrow(() -> {
@@ -13,7 +13,7 @@ public class ManagerTest {
 	        });
 	    }
 	 // TEST CASE 2: View Leave Requests
-	    // =================================
+	   
 	    @Test
 	    void testViewLeaveRequests_Success() {
 	        assertDoesNotThrow(() -> {
@@ -21,7 +21,7 @@ public class ManagerTest {
 	        });
 	    }
 	    // TEST CASE 3: View Team Leave Calendar
-	    // =================================
+	   
 	    @Test
 	    void testViewTeamLeaves_Success() {
 	        assertDoesNotThrow(() -> {
@@ -29,7 +29,7 @@ public class ManagerTest {
 	        });
 	    }
 	 // TEST CASE 4: View Team Attendance
-	    // =================================
+	   
 	    @Test
 	    void testViewTeamAttendance_Success() {
 	        assertDoesNotThrow(() -> {
@@ -37,7 +37,7 @@ public class ManagerTest {
 	        });
 	    }
 	 // TEST CASE 5: View Company Announcements
-	    // =================================
+	   
 	    @Test
 	    void testViewAnnouncements_Success() {
 	        assertDoesNotThrow(() -> {

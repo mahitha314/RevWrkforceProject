@@ -24,40 +24,39 @@ import rev.co.Service.AdminService;
 
 public class AdminServiceTest {
 	
-	  // ================================
+	 
     // 1️⃣ ADD EMPLOYEE (SUCCESS PATH)
-    // ================================
-//    @Test
-//    void testAddEmployee_DoesNotCrash() {
-//        String input =
-//                "101\n" +
-//                "Test User\n" +
-//                "test@mail.com\n" +
-//                "9999999999\n" +
-//                "Test Address\n" +
-//                "2000-01-01\n" +
-//                "2024-01-01\n" +
-//                "1\n" +
-//                "1\n" +
-//                "0\n" +
-//                "30000\n";
-//
-//        System.setIn(new ByteArrayInputStream(input.getBytes()));
-//
-//        assertDoesNotThrow(() -> AdminService.addEmployee(1));
-//    }
+  
+    @Test
+    void testAddEmployee_DoesNotCrash() {
+        String input =
+                "101\n" +
+                "Test User\n" +
+                "test@mail.com\n" +
+                "9999999999\n" +
+                "Test Address\n" +
+                "2000-01-01\n" +
+                "2024-01-01\n" +
+                "1\n" +
+                "1\n" +
+                "0\n" +
+                "30000\n";
 
-    // ================================
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+
+        assertDoesNotThrow(() -> AdminService.addEmployee(1));
+    }
+
     // 2️⃣ VIEW EMPLOYEES
-    // ================================
+ 
     @Test
     void testViewEmployees_DoesNotCrash() {
         assertDoesNotThrow(() -> AdminService.viewEmployees(1));
     }
 
-    // ================================
+    
     // 3️⃣ UPDATE EMPLOYEE STATUS
-    // ================================
+   
     @Test
     void testUpdateEmployeeStatus_InvalidStatus() {
         String input =
@@ -69,9 +68,9 @@ public class AdminServiceTest {
         assertDoesNotThrow(() -> AdminService.updateEmployeeStatus(1));
     }
 
-    // ================================
+    
     // 4️⃣ ADD HOLIDAY (INVALID DATE)
-    // ================================
+   
     @Test
     void testAddHoliday_InvalidDate() {
         String input =
@@ -83,17 +82,16 @@ public class AdminServiceTest {
         assertDoesNotThrow(() -> AdminService.addHoliday(1));
     }
 
-    // ================================
+   
     // 5️⃣ VIEW AUDIT LOGS
-    // ================================
+    
     @Test
     void testViewAuditLogs_DoesNotCrash() {
         assertDoesNotThrow(() -> AdminService.viewAuditLogs(1));
     }
 
-    // ================================
     // 6️⃣ LOGGER INITIALIZATION
-    // ================================
+   
     @Test
     void testLoggerWorking() {
         assertNotNull(

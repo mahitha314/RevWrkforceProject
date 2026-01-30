@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class AdminMenu {
 	 private static final Logger logger =
 	            LogManager.getLogger(AdminMenu.class);
-
+	
 	    public static void show(int adminId) {
 
 	        Scanner sc = new Scanner(System.in);
