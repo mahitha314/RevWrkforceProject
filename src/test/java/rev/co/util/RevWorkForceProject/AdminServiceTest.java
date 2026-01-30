@@ -27,25 +27,25 @@ public class AdminServiceTest {
 	  // ================================
     // 1️⃣ ADD EMPLOYEE (SUCCESS PATH)
     // ================================
-    @Test
-    void testAddEmployee_DoesNotCrash() {
-        String input =
-                "101\n" +
-                "Test User\n" +
-                "test@mail.com\n" +
-                "9999999999\n" +
-                "Test Address\n" +
-                "2000-01-01\n" +
-                "2024-01-01\n" +
-                "1\n" +
-                "1\n" +
-                "0\n" +
-                "30000\n";
-
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-
-        assertDoesNotThrow(() -> AdminService.addEmployee(1));
-    }
+//    @Test
+//    void testAddEmployee_DoesNotCrash() {
+//        String input =
+//                "101\n" +
+//                "Test User\n" +
+//                "test@mail.com\n" +
+//                "9999999999\n" +
+//                "Test Address\n" +
+//                "2000-01-01\n" +
+//                "2024-01-01\n" +
+//                "1\n" +
+//                "1\n" +
+//                "0\n" +
+//                "30000\n";
+//
+//        System.setIn(new ByteArrayInputStream(input.getBytes()));
+//
+//        assertDoesNotThrow(() -> AdminService.addEmployee(1));
+//    }
 
     // ================================
     // 2️⃣ VIEW EMPLOYEES

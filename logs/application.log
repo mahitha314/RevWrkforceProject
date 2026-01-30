@@ -124,3 +124,5 @@
 2026-01-30 10:03:55 [main] INFO  rev.co.util.RevWorkForceProject.Login - Login successful for userId 1, role ADMIN
 2026-01-30 10:03:55 [main] INFO  rev.co.menu.AdminMenu - Admin 1001 logged into Admin Menu
 2026-01-30 10:03:55 [main] INFO  rev.co.menu.AdminMenu - Displaying Admin Menu
+2026-01-30 10:52:12 [main] INFO  rev.co.Service.AdminService - Admin 1 viewing employees
+2026-01-30 10:52:14 [main] INFO  rev.co.Service.AdminService - Admin 1 viewing audit logs
