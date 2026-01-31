@@ -80,9 +80,18 @@ public class AdminService {
 				System.out.println("❌ Invalid choice!");
 				return;
 			}
-			System.out.print("Phone: ");
-			String phone = sc.next();
+			String phone;
+			while (true) {
+			    System.out.print("Phone: ");
+			    phone = sc.next();  // reads the next token (no spaces)
 
+			    // Validate phone number: exactly 10 digits
+			    if (phone.matches("\\d{10}")) {
+			        break;  // valid number, exit loop
+			    } else {
+			        System.out.println("❌ Invalid phone number! It must be exactly 10 digits.");
+			    }
+			}
 			System.out.print("Address: ");
 			sc.nextLine();
 			String address = sc.nextLine();
