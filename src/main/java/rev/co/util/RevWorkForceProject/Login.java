@@ -26,39 +26,24 @@ public class Login {
 
 	        	System.out.print("Password: ");
 	        	String password = sc.next();
-
-
 	        	try (Connection con = DBUtil.getConnection()) {
-
-	        	    // Fetch user info along with employee name
 	        	    String sql =
 	        	        "SELECT u.user_id, u.role, u.employee_id, e.name " +
 	        	        "FROM users u " +
 	        	        "JOIN employees e ON u.employee_id = e.employee_id " +
 	        	        "WHERE u.employee_id = ? AND u.password = ?";
-
 	        	    PreparedStatement ps = con.prepareStatement(sql);
 	        	    ps.setInt(1, empId);
 	        	    ps.setString(2, password);
-
 	        	    ResultSet rs = ps.executeQuery();
-
 	        	    if (rs.next()) {
-
 	        	        int userId = rs.getInt("user_id");
 	        	        int employeeId = rs.getInt("employee_id");
 	        	        String role = rs.getString("role");
 	        	        String name = rs.getString("name"); // fetch employee name
-
-	        	        
 	        	        System.out.println("\nLogin Successful! Welcome " + name + " [" + role + "]\n");
-
 	        	        logger.info("Login successful for userId {}, role {}", userId, role);
-
-	        	       
 	        	        DBUtil.logAction(userId, "Logged in");
-
-	        	        
 	        	        switch (role.toUpperCase()) {
 	        	            case "EMPLOYEE":
 	        	                EmployeeMenu.show(employeeId);
@@ -87,24 +72,4 @@ public class Login {
 	        }
 
 	    }
-
-	    /* ================= PASSWORD WITH STARS ================= */
-//	    private static String readPasswordWithStars() {
-//
-//	        StringBuilder password = new StringBuilder();
-//
-//	        try {
-//	            while (true) {
-//	                int ch = System.in.read();
-//	                if (ch == '\n' || ch == '\r') break;
-//	                password.append((char) ch);
-//	                System.out.print("*");
-//	            }
-//	            System.out.println();
-//	        } catch (Exception e) {
-//	            logger.error("Error reading password", e);
-//	        }
-//	        return password.toString();
-//	    
-//	    }
 }

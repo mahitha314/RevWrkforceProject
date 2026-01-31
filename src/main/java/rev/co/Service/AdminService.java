@@ -19,8 +19,6 @@ public class AdminService {
 			return rs.getInt(1) > 0;
 		}
 	}
-
-//mail
 	private static boolean isValidGmail(String email) {
 		return email != null && email.matches("^[A-Za-z0-9._%+-]+@gmail\\.com$");
 	}
@@ -68,14 +66,12 @@ public class AdminService {
 			System.out.print("Add as (1-Employee / 2-Manager): ");
 			int roleChoice = sc.nextInt();
 			String role;
-			int managerId1 = 0; // default
-
+			int managerId1 = 0;
 			if (roleChoice == 1) {
 				role = "EMPLOYEE";
-
 			} else if (roleChoice == 2) {
 				role = "MANAGER";
-				managerId1 = 0; // managers have no manager above them
+				managerId1 = 0; 
 			} else {
 				System.out.println("❌ Invalid choice!");
 				return;
@@ -83,11 +79,9 @@ public class AdminService {
 			String phone;
 			while (true) {
 			    System.out.print("Phone: ");
-			    phone = sc.next();  // reads the next token (no spaces)
-
-			    // Validate phone number: exactly 10 digits
+			    phone = sc.next();  
 			    if (phone.matches("\\d{10}")) {
-			        break;  // valid number, exit loop
+			        break; 
 			    } else {
 			        System.out.println("❌ Invalid phone number! It must be exactly 10 digits.");
 			    }

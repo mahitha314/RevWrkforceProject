@@ -62,100 +62,97 @@ public class EmployeeService {
 	// ===== Apply Leave =====
 	public static void applyLeave(int empId) {
 
-	    Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 
-	    System.out.println("\n===== APPLY LEAVE =====");
+		System.out.println("\n===== APPLY LEAVE =====");
 
-	    System.out.print("Enter Leave Type ID (number): ");
-	    int leaveTypeId;
-	    try {
-	        leaveTypeId = Integer.parseInt(sc.next());
-	    } catch (NumberFormatException e) {
-	        System.out.println("❌ Leave Type ID must be a number.");
-	        return;
-	    }
+		System.out.print("Enter Leave Type ID (number): ");
+		int leaveTypeId;
+		try {
+			leaveTypeId = Integer.parseInt(sc.next());
+		} catch (NumberFormatException e) {
+			System.out.println("❌ Leave Type ID must be a number.");
+			return;
+		}
 
-	    System.out.print("Start Date (yyyy-mm-dd): ");
-	    String start = sc.next();
+		System.out.print("Start Date (yyyy-mm-dd): ");
+		String start = sc.next();
 
-	    System.out.print("End Date (yyyy-mm-dd): ");
-	    String end = sc.next();
+		System.out.print("End Date (yyyy-mm-dd): ");
+		String end = sc.next();
 
-	    sc.nextLine();
-	    System.out.print("Reason: ");
-	    String reason = sc.nextLine();
+		sc.nextLine();
+		System.out.print("Reason: ");
+		String reason = sc.nextLine();
 
-	    LocalDate startDate = LocalDate.parse(start);
-	    LocalDate endDate = LocalDate.parse(end);
+		LocalDate startDate = LocalDate.parse(start);
+		LocalDate endDate = LocalDate.parse(end);
 
-	    if (endDate.isBefore(startDate)) {
-	        System.out.println("❌ End date cannot be before start date.");
-	        return;
-	    }
+		if (endDate.isBefore(startDate)) {
+			System.out.println("❌ End date cannot be before start date.");
+			return;
+		}
 
-	    int requestedDays = (int) ChronoUnit.DAYS.between(startDate, endDate) + 1;
+		int requestedDays = (int) ChronoUnit.DAYS.between(startDate, endDate) + 1;
 
-	    try (Connection con = DBUtil.getConnection()) {
+		try (Connection con = DBUtil.getConnection()) {
 
-	        // 1️⃣ Validate leave type
-	        String checkSql = "SELECT COUNT(*) FROM leave_types WHERE leave_type_id = ?";
-	        PreparedStatement checkPs = con.prepareStatement(checkSql);
-	        checkPs.setInt(1, leaveTypeId);
-	        ResultSet rs = checkPs.executeQuery();
-	        rs.next();
+			// 1️⃣ Validate leave type
+			String checkSql = "SELECT COUNT(*) FROM leave_types WHERE leave_type_id = ?";
+			PreparedStatement checkPs = con.prepareStatement(checkSql);
+			checkPs.setInt(1, leaveTypeId);
+			ResultSet rs = checkPs.executeQuery();
+			rs.next();
 
-	        if (rs.getInt(1) == 0) {
-	            System.out.println("❌ Invalid Leave Type ID.");
-	            return;
-	        }
+			if (rs.getInt(1) == 0) {
+				System.out.println("❌ Invalid Leave Type ID.");
+				return;
+			}
 
-	        // 2️⃣ Check leave balance
-	        String balanceSql = "SELECT available_days FROM leave_balance "
-	                + "WHERE employee_id = ? AND leave_type_id = ?";
+			// 2️⃣ Check leave balance
+			String balanceSql = "SELECT available_days FROM leave_balance "
+					+ "WHERE employee_id = ? AND leave_type_id = ?";
 
-	        PreparedStatement psBalance = con.prepareStatement(balanceSql);
-	        psBalance.setInt(1, empId);
-	        psBalance.setInt(2, leaveTypeId);
+			PreparedStatement psBalance = con.prepareStatement(balanceSql);
+			psBalance.setInt(1, empId);
+			psBalance.setInt(2, leaveTypeId);
 
-	        ResultSet rsBalance = psBalance.executeQuery();
+			ResultSet rsBalance = psBalance.executeQuery();
 
-	        if (!rsBalance.next()) {
-	            System.out.println("❌ Leave balance not found.");
-	            return;
-	        }
+			if (!rsBalance.next()) {
+				System.out.println("❌ Leave balance not found.");
+				return;
+			}
 
-	        int availableDays = rsBalance.getInt("available_days");
+			int availableDays = rsBalance.getInt("available_days");
 
-	        if (requestedDays > availableDays) {
-	            System.out.println("❌ Insufficient leave balance!");
-	            System.out.println("Available days : " + availableDays);
-	            System.out.println("Requested days : " + requestedDays);
-	            return; // ⛔ STOP – do not insert
-	        }
+			if (requestedDays > availableDays) {
+				System.out.println("❌ Insufficient leave balance!");
+				System.out.println("Available days : " + availableDays);
+				System.out.println("Requested days : " + requestedDays);
+				return;
+			}
+			String sql = "INSERT INTO leave_requests "
+					+ "(leave_id, employee_id, leave_type_id, start_date, end_date, reason, status) "
+					+ "VALUES (leave_request_seq.NEXTVAL, ?, ?, ?, ?, ?, 'PENDING')";
 
-	        // 3️⃣ Insert leave request
-	        String sql = "INSERT INTO leave_requests "
-	                + "(leave_id, employee_id, leave_type_id, start_date, end_date, reason, status) "
-	                + "VALUES (leave_request_seq.NEXTVAL, ?, ?, ?, ?, ?, 'PENDING')";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, empId);
+			ps.setInt(2, leaveTypeId);
+			ps.setDate(3, java.sql.Date.valueOf(startDate));
+			ps.setDate(4, java.sql.Date.valueOf(endDate));
+			ps.setString(5, reason);
 
-	        PreparedStatement ps = con.prepareStatement(sql);
-	        ps.setInt(1, empId);
-	        ps.setInt(2, leaveTypeId);
-	        ps.setDate(3, java.sql.Date.valueOf(startDate));
-	        ps.setDate(4, java.sql.Date.valueOf(endDate));
-	        ps.setString(5, reason);
+			ps.executeUpdate();
 
-	        ps.executeUpdate();
+			System.out.println("✅ Leave applied successfully!");
+			DBUtil.logAction(empId, "Applied leave from " + start + " to " + end);
 
-	        System.out.println("✅ Leave applied successfully!");
-	        DBUtil.logAction(empId, "Applied leave from " + start + " to " + end);
-
-	    } catch (Exception e) {
-	        System.out.println("❌ Failed to apply leave.");
-	        logger.error("Error applying leave for employee {}", empId, e);
-	    }
+		} catch (Exception e) {
+			System.out.println("❌ Failed to apply leave.");
+			logger.error("Error applying leave for employee {}", empId, e);
+		}
 	}
-
 
 	// ===== View My Leaves =====
 	public static void viewLeaves(int empId) {
@@ -392,25 +389,17 @@ public class EmployeeService {
 
 		System.out.print("Success Metrics: ");
 		String metrics = sc.nextLine();
-
 		try (Connection con = DBUtil.getConnection()) {
-
-			// Convert to java.sql.Date for Oracle
 			java.sql.Date deadline = java.sql.Date.valueOf(deadlineStr);
-
-			// Use sequence to auto-generate GOAL_ID
 			String sql = "INSERT INTO goals (goal_id, employee_id, description, deadline, priority, success_metrics) "
 					+ "VALUES (goal_seq.NEXTVAL, ?, ?, ?, ?, ?)";
-
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, empId);
 			ps.setString(2, desc);
 			ps.setDate(3, deadline);
 			ps.setString(4, priority.toUpperCase());
 			ps.setString(5, metrics);
-
 			int rows = ps.executeUpdate();
-
 			if (rows > 0) {
 				// This will show in console
 				System.out.println("\n✅ Goal added successfully!");
@@ -441,15 +430,12 @@ public class EmployeeService {
 
 			ResultSet rs = con.createStatement()
 					.executeQuery("SELECT title, message, created_on FROM announcements ORDER BY created_on DESC");
-
 			boolean found = false;
-
 			while (rs.next()) {
 				found = true;
 				System.out.printf("[%s] %s%n%s%n%n", rs.getTimestamp("created_on"), rs.getString("title"),
 						rs.getString("message"));
 			}
-
 			if (!found) {
 				System.out.println("⚠️ No announcements.");
 			}

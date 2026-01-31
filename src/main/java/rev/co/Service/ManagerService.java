@@ -149,29 +149,20 @@ public class ManagerService {
 			e.printStackTrace();
 		}
 	}
-
-	// 4. View Team Leave Calendar
 	public static void viewTeamLeaves(int managerId) {
 		try (Connection con = DBUtil.getConnection()) {
-
 			String sql = "SELECT e.name, lr.start_date, lr.end_date, lr.status " + "FROM leave_requests lr "
 					+ "JOIN employees e ON lr.employee_id = e.employee_id " + "WHERE e.manager_id = ?";
-
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, managerId);
 			ResultSet rs = ps.executeQuery();
-
 			boolean hasLeaves = false;
-
-			// Header - always visible
 			logger.warn("===== TEAM LEAVE CALENDAR =====");
 			System.out.println("===== TEAM LEAVE CALENDAR =====");
-
 			while (rs.next()) {
 				hasLeaves = true;
 				String leaveInfo = String.format("%s | %s to %s | %s", rs.getString("name"), rs.getDate("start_date"),
 						rs.getDate("end_date"), rs.getString("status"));
-
 				logger.warn(leaveInfo); // log at WARN to guarantee visibility
 				System.out.println(leaveInfo); // fallback to console
 			}
@@ -187,8 +178,6 @@ public class ManagerService {
 			e.printStackTrace();
 		}
 	}
-
-	// 5. View Team Goals
 	public static void viewTeamGoals(int managerId) {
 		try (Connection con = DBUtil.getConnection()) {
 

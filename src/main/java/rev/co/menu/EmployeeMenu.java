@@ -30,7 +30,6 @@ public class EmployeeMenu {
 			System.out.println("6. View Notifications");
 			System.out.println("7. Mark Attendance");
 			System.out.println("8. View My Attendance");
-//	            System.out.println("9. View Performance Reviews");
 			System.out.println("9. Set Goals");
 			System.out.println("10. View Company Announcements");
 			System.out.println("11. View My Team");
@@ -66,9 +65,6 @@ public class EmployeeMenu {
 			case 8:
 				EmployeeService.viewAttendance(employeeId);
 				break;
-//	            case 9:
-//	                EmployeeService.viewPerformance(employeeId);
-//	                break;
 			case 9:
 				EmployeeService.setGoals(employeeId);
 				break;
