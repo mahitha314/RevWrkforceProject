@@ -8,8 +8,6 @@ import java.sql.SQLException;
 
 public class DBUtil {
 	
-
-	    // 🔒 SYSTEM / ADMIN USER (MUST EXIST IN users TABLE)
 	    private static final int SYSTEM_USER_ID = 1;
 	    private static final int SYSTEM_EMPLOYEE_ID = 0;
 
@@ -21,7 +19,6 @@ public class DBUtil {
 	        );
 	    }
 
-	    // ✅ ENSURE SYSTEM USER EXISTS (FULL RECORD)
 	    private static void ensureSystemUserExists(Connection con) throws SQLException {
 	        String checkSql = "SELECT user_id FROM users WHERE user_id = ?";
 	        try (PreparedStatement ps = con.prepareStatement(checkSql)) {
@@ -42,7 +39,7 @@ public class DBUtil {
 	        }
 	    }
 
-	    // ✅ CHECK IF USER EXISTS
+	    // CHECK IF USER EXISTS
 	    private static boolean userExists(int userId, Connection con) throws SQLException {
 	        String sql = "SELECT 1 FROM users WHERE user_id = ?";
 	        try (PreparedStatement ps = con.prepareStatement(sql)) {
@@ -52,14 +49,14 @@ public class DBUtil {
 	        }
 	    }
 
-	    // ✅ SAFE AUDIT LOGGER
+	    //SAFE AUDIT LOGGER
 	    public static void logAction(int userId, String action) {
 
 	        String sql = "INSERT INTO audit_logs (user_id, action) VALUES (?, ?)";
 
 	        try (Connection con = getConnection()) {
 
-	            // ensure SYSTEM user exists
+	           
 	            ensureSystemUserExists(con);
 
 	            // fallback if userId is invalid

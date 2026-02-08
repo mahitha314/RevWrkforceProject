@@ -9,7 +9,7 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class AdminService {
-	// helper method
+	
 	private static boolean employeeIdExists(Connection con, int empId) throws SQLException {
 		String sql = "SELECT COUNT(*) FROM employees WHERE employee_id = ?";
 		try (PreparedStatement ps = con.prepareStatement(sql)) {
@@ -25,7 +25,7 @@ public class AdminService {
 
 	private static final Logger logger = LogManager.getLogger(AdminService.class);
 
-	// ================= ADD EMPLOYEE =================
+	// ADD EMPLOYEE
 	public static void addEmployee(int adminId) {
 		Scanner sc = new Scanner(System.in);
 		logger.info("Admin {} started Add Employee", adminId);
@@ -33,7 +33,7 @@ public class AdminService {
 		try (Connection con = DBUtil.getConnection()) {
 			con.setAutoCommit(false); // start transaction
 
-			// ---------------- Employee Input ----------------
+			
 			int empId;
 			while (true) {
 				System.out.print("Employee ID: ");
@@ -108,7 +108,7 @@ public class AdminService {
 			System.out.print("Salary: ");
 			double salary = sc.nextDouble();
 
-			// ---------------- Validate Department ----------------
+			// Validate Department 
 			try (PreparedStatement psDept = con
 					.prepareStatement("SELECT COUNT(*) FROM departments WHERE department_id = ?")) {
 				psDept.setInt(1, deptId);
@@ -121,7 +121,7 @@ public class AdminService {
 				}
 			}
 
-			// ---------------- Validate Designation ----------------
+			//  Validate Designation 
 			try (PreparedStatement psDesig = con
 					.prepareStatement("SELECT COUNT(*) FROM designations WHERE designation_id = ?")) {
 				psDesig.setInt(1, desigId);
@@ -134,7 +134,7 @@ public class AdminService {
 				}
 			}
 
-			// ---------------- Validate Manager ----------------
+			//  Validate Manager 
 			if (managerId != 0) {
 				try (PreparedStatement psMgr = con
 						.prepareStatement("SELECT COUNT(*) FROM employees WHERE employee_id = ?")) {
@@ -158,7 +158,7 @@ public class AdminService {
 				con.rollback();
 				return;
 			}
-			// ---------------- Insert Employee ----------------
+			//  Insert Employee 
 			String sqlEmp = "INSERT INTO employees " + "(employee_id, name, email, phone, address, dob, joining_date, "
 					+ "department_id, designation_id, manager_id, salary, status, password, role) "
 					+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -188,7 +188,7 @@ public class AdminService {
 				}
 			}
 
-			// ---------------- Insert into Users table ----------------
+			//Insert into Users table 
 			String sqlUser = "INSERT INTO users (user_id, employee_id, password, role) "
 					+ "VALUES (USER_SEQ.NEXTVAL, ?, ?, ?)";
 			try (PreparedStatement psUser = con.prepareStatement(sqlUser)) {
@@ -198,7 +198,7 @@ public class AdminService {
 				psUser.executeUpdate();
 			}
 
-			// ---------------- Initialize Leave Balance ----------------
+			
 			String sqlLeaveTypes = "SELECT leave_type_id FROM leave_types";
 			try (PreparedStatement psLeaveTypes = con.prepareStatement(sqlLeaveTypes);
 					ResultSet rs = psLeaveTypes.executeQuery()) {
@@ -216,7 +216,7 @@ public class AdminService {
 				}
 			}
 
-			con.commit(); // commit all inserts
+			con.commit(); 
 			System.out.println("✅ Employee, login, and leave balance created successfully!");
 			logger.info("Admin {} added employee {}", adminId, empId);
 			DBUtil.logAction(adminId, "Added employee " + empId);
@@ -230,13 +230,13 @@ public class AdminService {
 		}
 	}
 
-	// ================= VIEW EMPLOYEES =================
+	//  VIEW EMPLOYEES 
 	public static void viewEmployees(int adminId) {
 		logger.info("Admin {} viewing employees", adminId);
 
 		try (Connection con = DBUtil.getConnection()) {
 
-			// ---------------- Employees ----------------
+			
 			String sqlEmployees = "SELECT employee_id, name, email, phone, status " + "FROM employees "
 					+ "WHERE employee_id NOT IN (SELECT DISTINCT manager_id FROM employees WHERE manager_id IS NOT NULL) "
 					+ "ORDER BY employee_id ASC";
@@ -261,7 +261,7 @@ public class AdminService {
 				System.out.println("===================================\n");
 			}
 
-			// ---------------- Managers ----------------
+			//  Managers 
 			String sqlManagers = "SELECT employee_id, name, email, phone, status " + "FROM employees "
 					+ "WHERE employee_id IN (SELECT DISTINCT manager_id FROM employees WHERE manager_id IS NOT NULL) "
 					+ "ORDER BY employee_id ASC";
@@ -294,7 +294,7 @@ public class AdminService {
 		}
 	}
 
-	// ================= UPDATE EMPLOYEE STATUS =================
+	// UPDATE EMPLOYEE STATUS
 	public static void updateEmployeeStatus(int adminId) {
 
 		Scanner sc = new Scanner(System.in);
@@ -302,12 +302,12 @@ public class AdminService {
 		System.out.print("Employee ID: ");
 		int empId = sc.nextInt();
 
-		sc.nextLine(); // clear buffer
+		sc.nextLine(); 
 
 		System.out.print("Enter Status (ACTIVE / INACTIVE): ");
 		String status = sc.nextLine().trim().toUpperCase();
 
-		// ✅ Validate input before DB call
+		//  Validate input before DB call
 		if (!status.equals("ACTIVE") && !status.equals("INACTIVE")) {
 			System.out.println("❌ Invalid status! Please enter ACTIVE or INACTIVE only.");
 			return;
@@ -343,7 +343,7 @@ public class AdminService {
 		}
 	}
 
-	// ================= ASSIGN MANAGER =================
+	// ASSIGN MANAGER 
 	public static void assignManager(int adminId) {
 
 		Scanner sc = new Scanner(System.in);
@@ -358,7 +358,7 @@ public class AdminService {
 
 		try (Connection con = DBUtil.getConnection()) {
 
-			// ✅ Get Manager Name
+			
 			PreparedStatement mgrPs = con.prepareStatement("SELECT name FROM employees WHERE employee_id=?");
 			mgrPs.setInt(1, managerId);
 
@@ -371,7 +371,7 @@ public class AdminService {
 
 			String managerName = mgrRs.getString("name");
 
-			// ✅ Update employee with manager
+		
 			PreparedStatement ps = con.prepareStatement("UPDATE employees SET manager_id=? WHERE employee_id=?");
 
 			ps.setInt(1, managerId);
@@ -395,7 +395,7 @@ public class AdminService {
 		}
 	}
 
-	// ================= LEAVE REPORTS =================
+	//  LEAVE REPORTS 
 	public static void viewLeaveReports(int adminId) {
 
 		logger.info("Admin {} viewing leave reports", adminId);
@@ -434,7 +434,7 @@ public class AdminService {
 		}
 	}
 
-	// ================= ADD HOLIDAY =================
+	//  ADD HOLIDAY 
 	public static void addHoliday(int adminId) {
 		Scanner sc = new Scanner(System.in);
 
@@ -478,7 +478,7 @@ public class AdminService {
 		}
 	}
 
-	// ================= ADD DEPARTMENT =================
+	//  ADD DEPARTMENT 
 	public static void addDepartment(int adminId) {
 		Scanner sc = new Scanner(System.in);
 
@@ -525,7 +525,7 @@ public class AdminService {
 		}
 	}
 
-	// ================= ADD DESIGNATION =================
+	// ADD DESIGNATION 
 	public static void addDesignation(int adminId) {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Designation Name: ");
@@ -549,7 +549,7 @@ public class AdminService {
 				return;
 			}
 
-			// Insert new designation using sequence
+			
 			String insertSQL = "INSERT INTO designations (designation_id, designation_name) VALUES (designation_seq.NEXTVAL, ?)";
 			PreparedStatement ps = con.prepareStatement(insertSQL);
 			ps.setString(1, name);
@@ -571,7 +571,7 @@ public class AdminService {
 		}
 	}
 
-	// ================= PERFORMANCE REVIEWS =================
+	// PERFORMANCE REVIEWS
 	public static void viewAllPerformanceReviews(int adminId) {
 
 		logger.info("Admin {} viewing performance reviews", adminId);
@@ -611,7 +611,7 @@ public class AdminService {
 		}
 	}
 
-	// ================= ANNOUNCEMENT =================
+	//  ANNOUNCEMENT 
 	public static void addAnnouncement(int adminId) {
 		Scanner sc = new Scanner(System.in);
 
@@ -656,7 +656,7 @@ public class AdminService {
 		}
 	}
 
-	// ================= NOTIFICATION =================
+	//  NOTIFICATION 
 	public static void sendNotification(int adminId) {
 		Scanner sc = new Scanner(System.in);
 
@@ -687,7 +687,7 @@ public class AdminService {
 
 		try (Connection con = DBUtil.getConnection()) {
 
-			// Optional: Check if employee exists
+			//  Check if employee exists
 			String checkEmp = "SELECT COUNT(*) FROM employees WHERE employee_id = ?";
 			try (PreparedStatement psCheck = con.prepareStatement(checkEmp)) {
 				psCheck.setInt(1, empId);
@@ -699,7 +699,7 @@ public class AdminService {
 				}
 			}
 
-			// Insert notification using sequence
+			// Insert notification u
 			String sql = "INSERT INTO notifications (notification_id, employee_id, message, type, created_at) "
 					+ "VALUES (notification_seq.NEXTVAL, ?, ?, ?, SYSDATE)";
 
@@ -728,7 +728,7 @@ public class AdminService {
 		}
 	}
 
-	// ================= AUDIT LOGS =================
+	//  AUDIT LOGS 
 	public static void viewAuditLogs(int adminId) {
 
 		System.out.println("\n===== AUDIT LOGS =====");

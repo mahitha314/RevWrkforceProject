@@ -14,7 +14,7 @@ public class EmployeeService {
 
 	private static final Logger logger = LogManager.getLogger(EmployeeService.class);
 
-	// ===== Leave Balance =====
+	// Leave Balance 
 	public static void viewLeaveBalance(int empId) {
 
 		System.out.println("\n===== MY LEAVE BALANCE =====");
@@ -45,7 +45,6 @@ public class EmployeeService {
 
 				System.out.printf("%-20s %-20s%n", leaveName, displayValue);
 
-				// log output
 				logger.info("Employee {} | {} : {}", empId, leaveName, days);
 			}
 
@@ -59,7 +58,7 @@ public class EmployeeService {
 		}
 	}
 
-	// ===== Apply Leave =====
+	// Apply Leave 
 	public static void applyLeave(int empId) {
 
 		Scanner sc = new Scanner(System.in);
@@ -97,7 +96,7 @@ public class EmployeeService {
 
 		try (Connection con = DBUtil.getConnection()) {
 
-			// 1️⃣ Validate leave type
+			// Validate leave type
 			String checkSql = "SELECT COUNT(*) FROM leave_types WHERE leave_type_id = ?";
 			PreparedStatement checkPs = con.prepareStatement(checkSql);
 			checkPs.setInt(1, leaveTypeId);
@@ -109,7 +108,7 @@ public class EmployeeService {
 				return;
 			}
 
-			// 2️⃣ Check leave balance
+			// Check leave balance
 			String balanceSql = "SELECT available_days FROM leave_balance "
 					+ "WHERE employee_id = ? AND leave_type_id = ?";
 
@@ -154,7 +153,7 @@ public class EmployeeService {
 		}
 	}
 
-	// ===== View My Leaves =====
+	// View My Leaves 
 	public static void viewLeaves(int empId) {
 
 		System.out.println("\n===== MY LEAVES =====");
@@ -192,7 +191,7 @@ public class EmployeeService {
 		}
 	}
 
-	// ===== Cancel Leave =====
+	// Cancel Leave 
 	public static void cancelLeave(int empId) {
 
 		Scanner sc = new Scanner(System.in);
@@ -225,7 +224,7 @@ public class EmployeeService {
 		}
 	}
 
-	// ===== Holidays =====
+	//  Holidays 
 	public static void viewHolidays() {
 
 		System.out.println("\n===== COMPANY HOLIDAYS =====");
@@ -251,7 +250,7 @@ public class EmployeeService {
 		}
 	}
 
-	// ===== Notifications =====
+	//  Notifications 
 	public static void viewNotifications(int empId) {
 
 		System.out.println("\n===== MY NOTIFICATIONS =====");
@@ -284,7 +283,7 @@ public class EmployeeService {
 		}
 	}
 
-	// ===== Attendance =====
+	//  Attendance 
 	public static void markAttendance(int empId) {
 		try (Connection con = DBUtil.getConnection()) {
 
@@ -298,7 +297,7 @@ public class EmployeeService {
 				return;
 			}
 
-			// Insert today's attendance using sequence
+			// Insert today's attendance 
 			String sql = "INSERT INTO attendance (attendance_id, employee_id, attendance_date, status) "
 					+ "VALUES (ATTENDANCE_SEQ.NEXTVAL, ?, SYSDATE, 'PRESENT')";
 
@@ -315,7 +314,7 @@ public class EmployeeService {
 		}
 	}
 
-	// ===== View Attendance =====
+	//  View Attendance 
 
 	public static void viewAttendance(int empId) {
 		try (Connection con = DBUtil.getConnection()) {
@@ -343,7 +342,7 @@ public class EmployeeService {
 		}
 	}
 
-	// ===== Performance =====
+	//  Performance
 	public static void viewPerformance(int empId) {
 
 		System.out.println("\n===== PERFORMANCE REVIEWS =====");
@@ -374,7 +373,7 @@ public class EmployeeService {
 		}
 	}
 
-	// ===== Goals =====
+	//Goals
 	public static void setGoals(int empId) {
 		Scanner sc = new Scanner(System.in);
 
@@ -401,7 +400,7 @@ public class EmployeeService {
 			ps.setString(5, metrics);
 			int rows = ps.executeUpdate();
 			if (rows > 0) {
-				// This will show in console
+				
 				System.out.println("\n✅ Goal added successfully!");
 				System.out.println("Description: " + desc);
 				System.out.println("Deadline: " + deadline);
@@ -421,7 +420,7 @@ public class EmployeeService {
 		}
 	}
 
-	// ===== Announcements =====
+	// Announcements 
 	public static void viewAnnouncements() {
 
 		System.out.println("\n===== COMPANY ANNOUNCEMENTS =====");

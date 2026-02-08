@@ -87,9 +87,9 @@ public class ManagerService {
 		String status = choice.equalsIgnoreCase("A") ? "APPROVED" : "REJECTED";
 
 		try (Connection con = DBUtil.getConnection()) {
-			con.setAutoCommit(false); // Transaction start
+			con.setAutoCommit(false); 
 
-			// 1️⃣ Get leave details
+			//Get leave details
 			String getLeaveSql = "SELECT employee_id, leave_type_id, start_date, end_date "
 					+ "FROM leave_requests WHERE leave_id = ?";
 			PreparedStatement psLeave = con.prepareStatement(getLeaveSql);
@@ -107,7 +107,7 @@ public class ManagerService {
 			LocalDate endDate = rs.getDate("end_date").toLocalDate();
 			int leaveDays = (int) ChronoUnit.DAYS.between(startDate, endDate) + 1;
 
-			// 2️⃣ Update leave status
+			// Update leave status
 			String sqlUpdate = "UPDATE leave_requests SET status = ? " + "WHERE leave_id = ? AND EXISTS "
 					+ "(SELECT 1 FROM employees e WHERE e.employee_id = leave_requests.employee_id AND e.manager_id = ?)";
 			PreparedStatement psUpdate = con.prepareStatement(sqlUpdate);
@@ -121,7 +121,7 @@ public class ManagerService {
 				return;
 			}
 
-			// 3️⃣ Deduct leave only if APPROVED
+			// Deduct leave only if APPROVED
 			if (status.equals("APPROVED")) {
 				String deductSql = "UPDATE leave_balance " + "SET available_days = available_days - ? "
 						+ "WHERE employee_id = ? AND leave_type_id = ? " + "AND available_days >= ?";
@@ -163,8 +163,8 @@ public class ManagerService {
 				hasLeaves = true;
 				String leaveInfo = String.format("%s | %s to %s | %s", rs.getString("name"), rs.getDate("start_date"),
 						rs.getDate("end_date"), rs.getString("status"));
-				logger.warn(leaveInfo); // log at WARN to guarantee visibility
-				System.out.println(leaveInfo); // fallback to console
+				logger.warn(leaveInfo);
+				System.out.println(leaveInfo); 
 			}
 
 			if (!hasLeaves) {
@@ -190,7 +190,7 @@ public class ManagerService {
 
 			boolean hasGoals = false;
 
-			// Header - always visible
+		
 			logger.warn("===== TEAM GOALS =====");
 			System.out.println("===== TEAM GOALS =====");
 
@@ -200,8 +200,8 @@ public class ManagerService {
 						rs.getString("description"), rs.getDate("deadline"), rs.getString("priority"),
 						rs.getInt("progress"), rs.getString("status"));
 
-				logger.warn(goalInfo); // log at WARN to ensure it shows
-				System.out.println(goalInfo); // print to console as fallback
+				logger.warn(goalInfo); 
+				System.out.println(goalInfo); 
 			}
 
 			if (!hasGoals) {
@@ -231,7 +231,7 @@ public class ManagerService {
 
 			boolean hasReviews = false;
 
-			// Header always visible
+			
 			logger.warn("===== TEAM PERFORMANCE REVIEWS =====");
 			System.out.println("===== TEAM PERFORMANCE REVIEWS =====");
 
@@ -241,8 +241,8 @@ public class ManagerService {
 						rs.getString("name"), rs.getInt("year"), rs.getInt("self_rating"), rs.getInt("manager_rating"),
 						rs.getString("status"));
 
-				// log and print
-				logger.warn(reviewInfo); // WARN ensures visibility
+				
+				logger.warn(reviewInfo);
 				System.out.println(reviewInfo);
 			}
 
@@ -262,7 +262,7 @@ public class ManagerService {
 	public static void viewTeamAttendance(int managerId) {
 		try (Connection con = DBUtil.getConnection()) {
 
-			// Corrected column name if your attendance table has ATTENDANCE_DATE
+			
 			String sql = "SELECT e.name, a.attendance_date, a.status " + "FROM attendance a "
 					+ "JOIN employees e ON a.employee_id = e.employee_id " + "WHERE e.manager_id = ?";
 
@@ -272,7 +272,7 @@ public class ManagerService {
 
 			boolean hasRecords = false;
 
-			// Header always visible
+			
 			logger.warn("===== TEAM ATTENDANCE =====");
 			System.out.println("===== TEAM ATTENDANCE =====");
 
@@ -282,8 +282,8 @@ public class ManagerService {
 				String attendanceInfo = String.format("Employee: %s | Date: %s | Status: %s", rs.getString("name"),
 						rs.getDate("attendance_date"), rs.getString("status"));
 
-				// Log and print
-				logger.warn(attendanceInfo); // WARN ensures visibility
+				
+				logger.warn(attendanceInfo); 
 				System.out.println(attendanceInfo);
 			}
 
@@ -309,10 +309,8 @@ public class ManagerService {
 		System.out.print("Notification Type (LEAVE / PERFORMANCE / ANNOUNCEMENT): ");
 		String type = sc.next();
 
-		// Make input case-insensitive by converting to upper-case
 		type = type.toUpperCase();
 
-		// Optional: validate input
 		if (!type.equals("LEAVE") && !type.equals("PERFORMANCE") && !type.equals("ANNOUNCEMENT")) {
 			System.out.println("❌ Invalid notification type!");
 			return;
@@ -320,7 +318,6 @@ public class ManagerService {
 
 		try (Connection con = DBUtil.getConnection()) {
 
-			// Use sequence for notification_id
 			String sql = "INSERT INTO notifications (notification_id, employee_id, message, type) "
 					+ "SELECT NOTIFICATIONS_SEQ.NEXTVAL, employee_id, ?, ? " + "FROM employees WHERE manager_id = ?";
 
@@ -350,8 +347,8 @@ public class ManagerService {
 			ResultSet rs = con.createStatement()
 					.executeQuery("SELECT title, message, created_on FROM announcements ORDER BY created_on DESC");
 
-			System.out.println("\n===== COMPANY ANNOUNCEMENTS ====="); // console header
-			logger.warn("===== COMPANY ANNOUNCEMENTS ====="); // log header
+			System.out.println("\n===== COMPANY ANNOUNCEMENTS ====="); 
+			logger.warn("===== COMPANY ANNOUNCEMENTS ====="); 
 
 			boolean hasAnnouncements = false;
 
@@ -360,19 +357,19 @@ public class ManagerService {
 				String output = rs.getTimestamp("created_on") + " | " + rs.getString("title") + " | "
 						+ rs.getString("message");
 
-				System.out.println(output); // console
-				logger.info(output); // log file
+				System.out.println(output); 
+				logger.info(output); 
 			}
 
 			if (!hasAnnouncements) {
-				System.out.println("⚠ No announcements available."); // console
-				logger.warn("No announcements available."); // log
+				System.out.println("⚠ No announcements available."); 
+				logger.warn("No announcements available."); 
 			}
 
 		} catch (Exception e) {
-			System.out.println("❌ Error viewing announcements"); // console
+			System.out.println("❌ Error viewing announcements"); 
 			e.printStackTrace();
-			logger.error("Error viewing announcements", e); // log
+			logger.error("Error viewing announcements", e); 
 		}
 	}
 

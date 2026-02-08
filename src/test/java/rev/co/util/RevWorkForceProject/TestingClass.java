@@ -23,29 +23,20 @@ import rev.co.Service.AdminService;
 import rev.co.Service.EmployeeService;
 import rev.co.Service.ManagerService;
 public class TestingClass {
-	
-
-
-
-	    private static final int EMP_ID = 301;
-
+private static final int EMP_ID = 301;
 	    @Mock
 	    Connection connection;
-
-	   
-
 	    MockedStatic<DBUtil> mockedDBUtil;
-
 	    @BeforeEach
 	    void setUp() throws Exception {
 	        MockitoAnnotations.openMocks(this);
 
-	        // ✅ Static mock
+	       
 	        mockedDBUtil = mockStatic(DBUtil.class);
 	        mockedDBUtil.when(DBUtil::getConnection)
 	                    .thenReturn(connection);
 
-	        // ✅ JDBC mocks
+	       
 	        when(connection.prepareStatement(any()))
 	                .thenReturn(preparedStatement);
 
@@ -56,9 +47,8 @@ public class TestingClass {
 	                .thenReturn(resultSet);
 
 	        when(resultSet.next())
-	                .thenReturn(false); // no rows
+	                .thenReturn(false); 
 	    }
-
 
 	    @Test
 	    void testViewLeaveBalance_Success() {
@@ -94,7 +84,8 @@ public class TestingClass {
 		            ManagerService.viewTeam(MANAGER_ID);
 		        });
 		    }
-		 // TEST CASE 2: View Leave Requests
+		 
+		 // View Leave Requests
 		   
 		    @Test
 		    void testViewLeaveRequests_Success() {
@@ -102,7 +93,7 @@ public class TestingClass {
 		            ManagerService.viewLeaveRequests(MANAGER_ID);
 		        });
 		    }
-		    // TEST CASE 3: View Team Leave Calendar
+		    // View Team Leave Calendar
 		   
 		    @Test
 		    void testViewTeamLeaves_Success() {
@@ -110,7 +101,7 @@ public class TestingClass {
 		            ManagerService.viewTeamLeaves(MANAGER_ID);
 		        });
 		    }
-		 // TEST CASE 4: View Team Attendance
+		 // View Team Attendance
 		   
 		    @Test
 		    void testViewTeamAttendance_Success() {
@@ -118,8 +109,10 @@ public class TestingClass {
 		            ManagerService.viewTeamAttendance(MANAGER_ID);
 		        });
 		    }
-		 // TEST CASE 5: View Company Announcements
-		   
+		 // View Company Announcements
+		    @Mock
+		    PreparedStatement preparedStatement;
+
 		    @Test
 		    void testViewAnnouncements_Success() {
 		        assertDoesNotThrow(() -> {
@@ -142,22 +135,18 @@ public class TestingClass {
 		                "30000\n";
 
 		        System.setIn(new ByteArrayInputStream(input.getBytes()));
-
-//		        assertDoesNotThrow(() -> AdminService.addEmployee(1));
 		    }
 
-		    // 2️⃣ VIEW EMPLOYEES
+		    @Mock
+		    ResultSet resultSet;
+		    //  VIEW EMPLOYEES
 		 
 		    @Test
 		    void testViewAllPerformanceReviews_DoesNotCrash() {
 		        assertDoesNotThrow(() -> AdminService.viewAllPerformanceReviews(1));
 		    }
 
-
-		   
-
-		    
-		    // 3️⃣ UPDATE EMPLOYEE STATUS
+		    //  UPDATE EMPLOYEE STATUS
 		   
 		    @Test
 		    void testUpdateEmployeeStatus_InvalidStatus() {
@@ -171,7 +160,7 @@ public class TestingClass {
 		    }
 
 		    
-		    // 4️⃣ ADD HOLIDAY (INVALID DATE)
+		    //  ADD HOLIDAY (INVALID DATE)
 		   
 		    @Test
 		    void testAddHoliday_InvalidDate() {
@@ -183,16 +172,14 @@ public class TestingClass {
 
 		        assertDoesNotThrow(() -> AdminService.addHoliday(1));
 		    }
-
-		   
-		    // 5️⃣ VIEW AUDIT LOGS
+		    //  VIEW AUDIT LOGS
 		    
 		    @Test
 		    void testViewAuditLogs_DoesNotCrash() {
 		        assertDoesNotThrow(() -> AdminService.viewAuditLogs(1));
 		    }
 
-		    // 6️⃣ LOGGER INITIALIZATION
+		    // LOGGER INITIALIZATION
 		   
 		    @Test
 		    void testLoggerWorking() {
@@ -201,11 +188,7 @@ public class TestingClass {
 		            "Logger should not be null"
 		        );
 		    }
-		    @Mock
-		    PreparedStatement preparedStatement;
-
-		    @Mock
-		    ResultSet resultSet;
+		    
 		   
 	    @AfterEach
 	    void tearDown() {
